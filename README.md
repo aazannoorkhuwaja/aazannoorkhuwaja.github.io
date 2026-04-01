@@ -2,10 +2,10 @@
 
 A personal blog built with [Hugo](https://gohugo.io/) static site generator using the [Blowfish](https://github.com/nunocoracao/blowfish) theme.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
-- [Hugo](https://gohugo.io/installation/) (extended version recommended)
+- [Hugo](https://gohugo.io/installation/)
 - Git
 
 ### Local Development
@@ -44,7 +44,7 @@ The generated site will be in the `public/` directory.
 └── .github/workflows/   # GitHub Actions for deployment
 ```
 
-## 📝 Adding Content
+## Adding Content
 
 ### New Blog Post
 ```bash
@@ -56,7 +56,7 @@ hugo new content/post/my-new-post.md
 hugo new content/page/about.md
 ```
 
-## 🌐 Deployment
+## Deployment
 
 This site is automatically deployed using GitHub Actions. Every push to the `main` branch triggers a build and deploy to GitHub Pages.
 
@@ -64,7 +64,7 @@ To enable GitHub Pages:
 1. Go to **Settings → Pages** in your repository
 2. Select **GitHub Actions** as the source
 
-## 🎨 Customization
+## Customization
 
 Edit `hugo.toml` and files in `config/_default/` to customize:
 - Site title and description
