@@ -5,6 +5,3 @@ resources/
 # Build files
 .DS_Store
 *.log
-
-# Theme - regular clone (not submodule)
-themes/blowfish/
