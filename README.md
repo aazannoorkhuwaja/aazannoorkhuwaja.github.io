@@ -2,7 +2,7 @@
 
 A personal blog built with [Hugo](https://gohugo.io/) static site generator using the [Blowfish](https://github.com/nunocoracao/blowfish) theme.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - [Hugo](https://gohugo.io/installation/) (extended version recommended)
