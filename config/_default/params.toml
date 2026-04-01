@@ -1,0 +1,63 @@
+# -- Theme Options --
+# https://blowfish.page/docs/configuration/#theme-parameters
+
+colorScheme = "ocean"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+
+mainSections = ["post"]
+
+defaultBackgroundImage = "img/20.jpg"
+
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "background"
+  showRecent = true
+  showRecentItems = 5
+  showMoreLink = true
+  showMoreLinkDest = "/post/"
+  cardView = false
+
+[article]
+  showDate = true
+  showAuthor = true
+  showHero = false
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showEdit = false
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = true
+  showZenMode = false
+
+[list]
+  showHero = false
+  showBreadcrumbs = false
+  showSummary = true
+  showCards = true
+  groupByYear = true
+  cardView = true
+
+[author]
+  name = "Aazan Noor Khuwaja"
+  image = "img/avatar.png"
+  headline = "Computer Science Student at NUCES"
+  bio = "Passionate about AI, Linux, and Software Development. Competitive programmer and open-source enthusiast."
+
+[sitemap]
+  excludedKinds = ["taxonomy", "term"]

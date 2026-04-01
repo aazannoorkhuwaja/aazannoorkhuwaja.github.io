@@ -1,0 +1,10 @@
+# Hugo output - these can be regenerated
+public/
+resources/
+
+# Build files
+.DS_Store
+*.log
+
+# Theme - regular clone (not submodule)
+themes/blowfish/

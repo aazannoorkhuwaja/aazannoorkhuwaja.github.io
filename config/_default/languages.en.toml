@@ -1,0 +1,26 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Aazan Noor Khuwaja"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Computer Science Student at NUCES | Exploring AI, Linux, and Software Development"
+
+[params.author]
+  name = "Aazan Noor Khuwaja"
+  image = "img/avatar.png"
+  headline = "Computer Science Student at NUCES"
+  bio = "Passionate about AI, Linux, and Software Development. Competitive programmer and open-source enthusiast."
+  links = [
+    { github = "https://github.com/aazannoorkhuwaja" },
+    { linkedin = "https://linkedin.com/in/aazannoorkhuwaja" },
+    { instagram = "https://instagram.com/aazannoorkhuwaja" },
+    { facebook = "https://www.facebook.com/profile.php?viewas=100000686899395&id=100010245635720" },
+    { threads = "https://www.threads.net/@aazannoorkhuwaja" },
+    { youtube = "https://youtube.com/@aazannoorkhuwaja" },
+  ]
