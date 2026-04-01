@@ -74,4 +74,4 @@ Edit `hugo.toml` and files in `config/_default/` to customize:
 
 ## 📄 License
 
-MIT License - feel free to use this as a template for your own blog!
+MIT License - feel free to use this as a template for your own blog!test
