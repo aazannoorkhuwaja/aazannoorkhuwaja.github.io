@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://aazannoorkhuwaja.github.io/</loc><lastmod>2026-04-01T00:00:00+00:00</lastmod></url><url><loc>https://aazannoorkhuwaja.github.io/page/contact/</loc><lastmod>2026-04-01T00:00:00+00:00</lastmod></url><url><loc>https://aazannoorkhuwaja.github.io/page/</loc><lastmod>2026-04-01T00:00:00+00:00</lastmod></url><url><loc>https://aazannoorkhuwaja.github.io/page/projects/</loc><lastmod>2026-04-01T00:00:00+00:00</lastmod></url><url><loc>https://aazannoorkhuwaja.github.io/flashyt/</loc><lastmod>2026-03-06T00:00:00+00:00</lastmod></url><url><loc>https://aazannoorkhuwaja.github.io/post/</loc><lastmod>2026-03-06T00:00:00+00:00</lastmod></url><url><loc>https://aazannoorkhuwaja.github.io/page/about/</loc><lastmod>2024-01-01T00:00:00+00:00</lastmod></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/page/contact/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/page/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/page/projects/</loc>
+    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/flashyt/</loc>
+    <lastmod>2026-03-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/post/</loc>
+    <lastmod>2026-03-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://aazannoorkhuwaja.github.io/page/about/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url>
+</urlset>
