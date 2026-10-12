@@ -2,24 +2,22 @@
 title = "Contact"
 date = 2026-04-01
 author = "Aazan Noor Khuwaja"
-description = "How to contact Aazan Noor Khuwaja."
+description = "Contact Aazan Noor Khuwaja for internships, open-source collaboration, and software engineering opportunities."
 showDate = false
 showAuthor = false
 showReadingTime = false
 +++
 
-## Get In Touch
+## Let’s talk
 
-I'm always open to interesting conversations, collaboration opportunities, or just a friendly hello. Feel free to reach out through any of the channels below.
+I’m open to **internships, open-source collaboration, technical projects, and conversations with people building thoughtful software**.
 
-### Social Profiles
+For professional contact, the best channels are:
 
+- **Email:** [aazannoorkhuwaja@gmail.com](mailto:aazannoorkhuwaja@gmail.com)
+- **LinkedIn:** [linkedin.com/in/aazan-noor-khuwaja-cs](https://www.linkedin.com/in/aazan-noor-khuwaja-cs/)
 - **GitHub:** [github.com/aazannoorkhuwaja](https://github.com/aazannoorkhuwaja)
-- **LinkedIn:** [linkedin.com/in/aazannoorkhuwaja](https://linkedin.com/in/aazannoorkhuwaja)
-- **Instagram:** [instagram.com/aazannoorkhuwaja](https://instagram.com/aazannoorkhuwaja)
-- **Threads:** [threads.net/@aazannoorkhuwaja](https://www.threads.net/@aazannoorkhuwaja)
-- **YouTube:** [youtube.com/@aazannoorkhuwaja](https://youtube.com/@aazannoorkhuwaja)
 
-### All Links
+If you’re reaching out about a role or project, sharing a little context about the problem, team, or opportunity helps me respond more usefully.
 
-Find all my links in one place on my [Linktree](https://linktr.ee/aazannoorkhuwaja).
+You can also explore my [selected projects](/page/projects/) before getting in touch.
