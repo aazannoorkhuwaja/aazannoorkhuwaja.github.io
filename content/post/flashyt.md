@@ -1,7 +1,10 @@
 +++
-title = "Flash YT: Download YouTube Videos In One Click"
+title = "FlashYT: One-Click YouTube Downloads"
 description = "A browser-integrated downloader that connects a YouTube interface to a local Python host through Native Messaging."
 date = 2026-03-06
+showAuthor = false
+showTableOfContents = false
+showWordCount = false
 [params]
     developer = "Aazan Noor Khuwaja"
 +++
@@ -29,8 +32,3 @@ I used AI coding tools during development, but the project also reinforced why I
 
 ### Repository
 [View FlashYT on GitHub](https://github.com/aazannoorkhuwaja/FlashYT)
-
----
-
-**Author:** Aazan Noor Khuwaja  
-*5th-semester CS student at FAST-NUCES Karachi*
