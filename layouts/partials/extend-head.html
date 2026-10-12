@@ -80,7 +80,6 @@
     max-width: none !important;
     overflow-y: auto;
     overscroll-behavior: contain;
-    background: #080b10 !important;
     color: #eef2f7;
     transition: opacity 160ms ease;
     padding:
@@ -90,7 +89,11 @@
       max(1.25rem, env(safe-area-inset-left));
   }
 
-  html:not(.dark) .portfolio-mobile-panel {
+  #mobile-menu-toggle ~ .portfolio-mobile-panel {
+    background: #080b10 !important;
+  }
+
+  html:not(.dark) #mobile-menu-toggle ~ .portfolio-mobile-panel {
     background: #f5f3ee !important;
     color: #17202d;
   }
