@@ -5,7 +5,8 @@ description = "Selected software engineering, AI, database, and open-source proj
 showDate = false
 showAuthor = false
 showReadingTime = false
-showTableOfContents = true
+showWordCount = false
+showTableOfContents = false
 +++
 
 I learn best by building systems that have constraints, failure modes, and a real reason to exist. These are the projects that best represent how I currently think about software.
