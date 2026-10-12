@@ -9,7 +9,8 @@
     <div class="portfolio-mobile-panel-inner">
       <div class="portfolio-mobile-panel-head">
         <a href="{{ "" | relLangURL }}" class="portfolio-mobile-brand" aria-label="{{ .Site.Title }} home">
-          {{ .Site.Title | markdownify }}
+          <span class="portfolio-monogram" aria-hidden="true">ANK</span>
+          <span>{{ .Site.Title | markdownify }}</span>
         </a>
         <label for="mobile-menu-toggle" class="portfolio-mobile-close" aria-label="Close navigation menu">
           {{ partial "icon.html" "xmark" }}
