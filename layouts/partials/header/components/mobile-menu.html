@@ -1,0 +1,58 @@
+<div class="flex items-center h-14">
+  <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+
+  <label
+    for="mobile-menu-toggle"
+    aria-label="Open navigation menu"
+    class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+    {{ partial "icon.html" "bars" }}
+  </label>
+
+  <div
+    role="dialog"
+    aria-modal="true"
+    aria-label="Site navigation"
+    style="scrollbar-gutter: stable;"
+    class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/99 dark:bg-neutral-900/99 {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
+
+    <div class="mx-auto max-w-md">
+      <div class="flex items-center justify-between mb-10">
+        <a href="{{ "" | relLangURL }}" class="font-bold text-neutral-900 dark:text-neutral-100 no-underline" aria-label="{{ .Site.Title }} home">
+          {{ .Site.Title | markdownify }}
+        </a>
+
+        <label
+          for="mobile-menu-toggle"
+          aria-label="Close navigation menu"
+          class="flex items-center justify-center h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+          {{ partial "icon.html" "xmark" }}
+        </label>
+      </div>
+
+      <nav class="space-y-6" aria-label="Mobile navigation">
+        {{ range .Site.Menus.main }}
+          <a
+            href="{{ .URL }}"
+            {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}target="_blank" rel="noopener noreferrer"{{ end }}
+            class="flex items-center py-2 text-2xl font-bold tracking-tight text-neutral-700 dark:text-neutral-200 no-underline bf-icon-color-hover">
+            {{ .Name | markdownify }}
+          </a>
+        {{ end }}
+      </nav>
+
+      {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+        <div class="mt-10 pt-8 border-t bf-border-color">
+          <button
+            id="appearance-switcher-mobile"
+            type="button"
+            aria-label="Toggle color theme"
+            class="flex items-center gap-3 text-neutral-700 dark:text-neutral-200 bf-icon-color-hover">
+            <span class="dark:hidden">{{ partial "icon.html" "moon" }}</span>
+            <span class="hidden dark:inline-flex">{{ partial "icon.html" "sun" }}</span>
+            <span class="text-base font-medium">Switch theme</span>
+          </button>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
