@@ -16,6 +16,13 @@ buildFuture = false
 [imaging]
   anchor = 'Center'
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Portfolio content is authored in this repository and uses small HTML
+      # structures for proof/credential cards.
+      unsafe = true
+
 [taxonomies]
   tag = "tags"
   category = "categories"
