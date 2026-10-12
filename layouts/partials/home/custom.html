@@ -14,7 +14,7 @@
 
     <aside class="profile-card" aria-label="Current profile">
       <div class="profile-photo-wrap">
-        <img src="/img/avatar.png" alt="Aazan Noor Khuwaja" width="180" height="180" decoding="async">
+        <img src="/img/avatar.png" alt="Aazan Noor Khuwaja" width="180" height="180" loading="eager" fetchpriority="high" decoding="async">
         <div class="profile-photo-caption">
           <strong>Aazan Noor Khuwaja</strong>
           <span>Computer Science undergraduate</span>
@@ -78,12 +78,14 @@
         </div>
         <div class="project-visual pharma-visual" aria-label="Pharma-Khaato project evidence">
           <figure class="visual-frame motion-demo">
-            <img class="motion-evidence" src="https://raw.githubusercontent.com/aazannoorkhuwaja/Pharma-Khaato/main/docs/pharmad.gif" alt="Animated demonstration of the Pharma-Khaato application" loading="lazy" decoding="async">
-            <img class="motion-fallback" src="https://raw.githubusercontent.com/aazannoorkhuwaja/Pharma-Khaato/main/docs/2c437707-0e15-40bf-845d-21d675a4456a.png" alt="Pharma-Khaato application screenshot" loading="lazy" decoding="async">
+            <picture>
+              <source media="(min-width: 768px) and (prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/aazannoorkhuwaja/Pharma-Khaato/main/docs/pharmad.gif">
+              <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/Pharma-Khaato/main/docs/2c437707-0e15-40bf-845d-21d675a4456a.png" alt="Pharma-Khaato application screenshot and desktop demo preview" loading="lazy" fetchpriority="low" decoding="async">
+            </picture>
             <figcaption>Application demo</figcaption>
           </figure>
           <figure class="visual-frame visual-diagram">
-            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/Pharma-Khaato/main/project/pharma_khaato_system_flows.svg" alt="Pharma-Khaato system flow diagram" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/Pharma-Khaato/main/project/pharma_khaato_system_flows.svg" alt="Pharma-Khaato system flow diagram" loading="lazy" fetchpriority="low" decoding="async">
             <figcaption>System flow</figcaption>
           </figure>
         </div>
@@ -111,8 +113,10 @@
         <h3>FlashYT</h3>
         <p>A browser-integrated downloader that connects an extension to a local Python host, turning a browser action into a private local download workflow.</p>
         <figure class="visual-frame motion-demo flashyt-demo">
-          <img class="motion-evidence" src="https://raw.githubusercontent.com/aazannoorkhuwaja/FlashYT/main/docs/images/flashyt_demo.gif" alt="Animated FlashYT product demonstration" loading="lazy" decoding="async">
-          <img class="motion-fallback" src="https://raw.githubusercontent.com/aazannoorkhuwaja/FlashYT/main/docs/images/quality_selector.png" alt="FlashYT quality selector" loading="lazy" decoding="async">
+          <picture>
+            <source media="(min-width: 768px) and (prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/aazannoorkhuwaja/FlashYT/main/docs/images/flashyt_demo.gif">
+            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/FlashYT/main/docs/images/quality_selector.png" alt="FlashYT quality selector and desktop demo preview" loading="lazy" fetchpriority="low" decoding="async">
+          </picture>
           <figcaption>Browser-to-download demo</figcaption>
         </figure>
         <p class="project-role">The project includes the extension UI, native messaging, installer flow, releases, and troubleshooting.</p>
@@ -141,11 +145,11 @@
         </div>
         <div class="fyp-evidence" aria-label="FYP Management System project evidence">
           <figure class="visual-frame visual-poster">
-            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/FYP-Management-System-SDA-Project/main/design/assets/fyp_management_poster.png" alt="FYP Management System project poster" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/FYP-Management-System-SDA-Project/main/design/assets/fyp_management_poster.png" alt="FYP Management System project poster" loading="lazy" fetchpriority="low" decoding="async">
             <figcaption>Project poster</figcaption>
           </figure>
           <figure class="visual-frame visual-uml">
-            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/FYP-Management-System-SDA-Project/main/docs/legacy/FYP_Class_Diagram_Updated.drawio.png" alt="FYP Management System class diagram" loading="lazy" decoding="async">
+            <img src="https://raw.githubusercontent.com/aazannoorkhuwaja/FYP-Management-System-SDA-Project/main/docs/legacy/FYP_Class_Diagram_Updated.drawio.png" alt="FYP Management System class diagram" loading="lazy" fetchpriority="low" decoding="async">
             <figcaption>Class architecture</figcaption>
           </figure>
         </div>
