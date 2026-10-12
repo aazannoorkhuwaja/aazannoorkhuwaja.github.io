@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <section class="writing-index" aria-labelledby="writing-title">
+    <header class="writing-index-header">
+      <p class="writing-index-kicker">Technical writing · research notes · project retrospectives</p>
+      <h1 id="writing-title">Writing</h1>
+      <p class="writing-index-intro">Notes from projects, coursework, and research that changed how I think about software, algorithms, and AI. I prefer writing from things I have actually built, debugged, or studied closely.</p>
+    </header>
+
+    {{ if gt (len .Pages) 0 }}
+      <div class="writing-grid">
+        {{ range $i, $page := .Pages.ByWeight }}
+          <article class="writing-card{{ if eq $i 0 }} writing-card--featured{{ end }}">
+            {{ partial "article/banner.html" (dict "page" $page "compact" true) }}
+            <div class="writing-card-body">
+              <span class="writing-card-type">{{ $page.Params.articletype | default "Technical writing" }}</span>
+              <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+              {{ with $page.Description }}<p>{{ . }}</p>{{ end }}
+
+              {{ with $page.Params.tags }}
+                <div class="writing-card-tags" aria-label="Topics">
+                  {{ range first 3 . }}<span>{{ . }}</span>{{ end }}
+                </div>
+              {{ end }}
+
+              <div class="writing-card-meta">
+                <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 Jan 2006" }}</time>
+                <span aria-hidden="true">·</span>
+                <span>{{ $page.ReadingTime }} min read</span>
+              </div>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p>No articles yet.</p>
+    {{ end }}
+  </section>
+{{ end }}
