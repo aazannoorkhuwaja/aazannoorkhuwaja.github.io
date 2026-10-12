@@ -89,11 +89,11 @@
       max(1.25rem, env(safe-area-inset-left));
   }
 
-  #mobile-menu-toggle ~ .portfolio-mobile-panel {
+  #mobile-menu-toggle ~ div.portfolio-mobile-panel[role="dialog"] {
     background: #080b10 !important;
   }
 
-  html:not(.dark) #mobile-menu-toggle ~ .portfolio-mobile-panel {
+  html:not(.dark) #mobile-menu-toggle ~ div.portfolio-mobile-panel[role="dialog"] {
     background: #f5f3ee !important;
     color: #17202d;
   }
