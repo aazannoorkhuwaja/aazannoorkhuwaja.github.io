@@ -1,0 +1,19 @@
+{{ $page := .page }}
+{{ $compact := .compact | default false }}
+{{ with $page.Params.featureimage }}
+  <figure class="article-banner{{ if $compact }} article-banner--card{{ else }} article-banner--single{{ end }}">
+    <img
+      src="{{ . }}"
+      alt="{{ $page.Params.featureimagealt | default (printf "%s article banner" $page.Title) }}"
+      loading="{{ if $compact }}lazy{{ else }}eager{{ end }}"
+      decoding="async"
+      {{ if not $compact }}fetchpriority="high"{{ end }}>
+    <div class="article-banner-brand" aria-hidden="true">
+      <div class="article-banner-identity">
+        <span class="portfolio-monogram">ANK</span>
+        <span>Aazan Noor Khuwaja</span>
+      </div>
+      <span class="article-banner-topic">{{ $page.Params.articletype | default "Technical writing" }}</span>
+    </div>
+  </figure>
+{{ end }}
