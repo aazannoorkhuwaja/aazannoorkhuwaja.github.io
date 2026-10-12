@@ -24,9 +24,20 @@ That mindset has shaped the projects I’m proudest of so far. I’ve worked on 
 
 ## Beyond coursework
 
-I’ve been involved with the **Microsoft Learn Student Ambassador community**, **IEEE**, and the **TEDxFAST Peshawar** team. My TEDx role focused on marketing outreach and cross-functional coordination, which gave me experience communicating with people outside purely technical work.
+My experience outside technical coursework has helped me build communication, coordination, and responsibility alongside engineering skills.
 
-I have also volunteered with **Alkhidmat Foundation Pakistan** in humanitarian and disaster-relief activities. Those experiences matter to me because useful engineering still depends on communication, reliability, and understanding the people a system is supposed to serve.
+- **Alkhidmat Foundation Pakistan — Volunteer:** participated in humanitarian and disaster-relief activities.
+- **TEDxFAST Peshawar — Marketing outreach:** worked across teams and communicated with people outside purely technical roles.
+- **Microsoft Learn Student Ambassador community & IEEE:** participated in student technology communities and collaborative learning activities.
+
+## Certifications & learning credentials
+
+I use certifications as structured learning rather than as substitutes for project work. Two credentials that support the foundations shown in this portfolio are:
+
+- **University of Illinois Urbana-Champaign — Object-Oriented Programming & Data Structures**
+- **Google Cloud — Generative AI**
+
+The projects on this site are where I try to apply that learning: designing systems, debugging them, measuring results, and documenting what actually worked.
 
 ## How I’m developing
 
