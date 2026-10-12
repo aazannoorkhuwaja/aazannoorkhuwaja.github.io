@@ -31,7 +31,6 @@
 </script>
 
 <style id="portfolio-responsive-system">
-  /* Header: one source of truth, independent of Blowfish/Tailwind breakpoints. */
   .portfolio-nav-actions {
     margin-left: auto;
     display: flex;
@@ -39,13 +38,11 @@
     min-width: 0;
     flex-shrink: 0;
   }
-
   .portfolio-nav-desktop {
     display: flex;
     align-items: center;
     gap: clamp(.9rem, 1.8vw, 1.45rem);
   }
-
   .portfolio-nav-mobile { display: none; align-items: center; }
 
   .theme-icon {
@@ -57,7 +54,6 @@
   html.dark .theme-icon-moon { display: none; }
   html.dark .theme-icon-sun { display: inline-flex; }
 
-  /* Custom mobile menu: no responsive utility dependency. */
   .mobile-menu-shell { display: flex; align-items: center; }
   .mobile-menu-toggle {
     position: absolute;
@@ -85,7 +81,14 @@
 
   .mobile-menu-dialog {
     position: fixed;
-    inset: 0;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
     z-index: 100;
     visibility: hidden;
     opacity: 0;
@@ -108,10 +111,7 @@
   }
   body:has(#mobile-menu-toggle:checked) { overflow: hidden; }
 
-  .mobile-menu-panel {
-    width: min(100%, 32rem);
-    margin: 0 auto;
-  }
+  .mobile-menu-panel { width: min(100%, 32rem); margin: 0 auto; }
   .mobile-menu-topbar {
     display: flex;
     align-items: center;
@@ -161,7 +161,6 @@
     .portfolio-nav-mobile { display: flex !important; }
   }
 
-  /* Touch-device fallback for in-app browsers that report a desktop-ish layout viewport. */
   html[data-compact-ui="true"] .portfolio-nav-desktop { display: none !important; }
   html[data-compact-ui="true"] .portfolio-nav-mobile { display: flex !important; }
   html[data-compact-ui="true"] .portfolio-nav {
@@ -184,7 +183,6 @@
   }
   html[data-compact-ui="true"] .portfolio-brand-copy small { display: none !important; }
 
-  /* Compact layout fallback: protects the homepage even when width media queries are unreliable. */
   html[data-compact-ui="true"] .portfolio-hero {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 2rem !important;
@@ -243,9 +241,15 @@
   html[data-compact-ui="true"] .hero-actions { flex-wrap: wrap !important; }
   html[data-compact-ui="true"] .btn { min-width: 0 !important; }
 
-  /* Legacy selectors still exist in the bundled stylesheet. These equal-or-higher
-     specificity rules deliberately win so there is only one mobile menu behavior. */
   #mobile-menu-toggle ~ div.mobile-menu-dialog {
+    left: 0 !important;
+    top: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: 100vh !important;
+    height: 100dvh !important;
     padding:
       max(1.25rem, env(safe-area-inset-top))
       max(1.25rem, env(safe-area-inset-right))
