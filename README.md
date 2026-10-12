@@ -1,77 +1,80 @@
-# My Hugo Blog
+# Aazan Noor Khuwaja — Portfolio
 
-A personal blog built with [Hugo](https://gohugo.io/) static site generator using the [Blowfish](https://github.com/nunocoracao/blowfish) theme.
+Personal engineering portfolio for **Aazan Noor Khuwaja**, Computer Science undergraduate at FAST-NUCES Peshawar.
 
-## Quick Start
+The site highlights selected work across software engineering, databases, AI/ML, and open-source tooling, with longer-form writing for technical project stories.
+
+## Stack
+
+- **Hugo** static site generator
+- **Blowfish** theme with project-level overrides
+- Custom homepage partial in `layouts/partials/home/custom.html`
+- Custom styles in `assets/css/custom.css`
+- **GitHub Pages** deployment through GitHub Actions
+
+## Local development
 
 ### Prerequisites
-- [Hugo](https://gohugo.io/installation/)
+
+- Hugo Extended `0.159.1`
 - Git
 
-### Local Development
-
 ```bash
-# Clone the repository
 git clone https://github.com/aazannoorkhuwaja/aazannoorkhuwaja.github.io.git
 cd aazannoorkhuwaja.github.io
-
-# Start the local development server
 hugo server -D
 ```
 
-Visit `http://localhost:1313` to see your site.
+Open `http://localhost:1313`.
 
-### Build for Production
+## Production build
 
 ```bash
 hugo --minify
 ```
 
-The generated site will be in the `public/` directory.
+Generated output is written to `public/`.
 
-## 📁 Project Structure
+## Content structure
 
-```
-.
-├── archetypes/          # Content templates
-├── assets/              # CSS, JS, images (processed by Hugo)
-├── config/              # Hugo configuration
-├── content/             # Your content (posts, pages)
-├── static/              # Static files (images, etc.)
-├── themes/              # Hugo themes
-│   └── blowfish/        # Blowfish theme
-├── hugo.toml            # Hugo configuration file
-└── .github/workflows/   # GitHub Actions for deployment
+```text
+content/
+├── page/
+│   ├── about.md
+│   ├── contact.md
+│   └── projects.md
+└── post/
+    └── flashyt.md
 ```
 
-## Adding Content
+## Portfolio customization
 
-### New Blog Post
-```bash
-hugo new content/post/my-new-post.md
-```
+The site intentionally keeps custom work outside the vendored Blowfish theme wherever possible:
 
-### New Page
-```bash
-hugo new content/page/about.md
-```
+- `layouts/partials/home/custom.html` — portfolio homepage composition
+- `assets/css/custom.css` — visual system, responsive layout, interaction states
+- `config/_default/` — navigation, author identity, and theme behavior
+
+This makes future theme maintenance safer than modifying theme internals directly.
 
 ## Deployment
 
-This site is automatically deployed using GitHub Actions. Every push to the `main` branch triggers a build and deploy to GitHub Pages.
+The default production branch is `master`. Pushes to `master` trigger the Hugo build and GitHub Pages deployment workflow in `.github/workflows/hugo.yaml`.
 
-To enable GitHub Pages:
-1. Go to **Settings → Pages** in your repository
-2. Select **GitHub Actions** as the source
+The workflow builds the Hugo site first and deploys only the generated `public/` output.
 
-## Customization
+## Portfolio goals
 
-Edit `hugo.toml` and files in `config/_default/` to customize:
-- Site title and description
-- Menu items
-- Theme options
-- And more...
+The site is designed around a few principles:
 
-## 📄 License
+1. Projects and outcomes before generic skill claims.
+2. Clear contribution statements for team projects.
+3. Measurable evidence where a project supports it.
+4. Professional navigation with minimal distractions.
+5. Responsive, keyboard-accessible interactions with reduced-motion support.
 
-MIT License - feel free to use this as a template for your own blog!
+## Links
+
+- Website: https://aazannoorkhuwaja.github.io/
+- GitHub: https://github.com/aazannoorkhuwaja
+- LinkedIn: https://www.linkedin.com/in/aazan-noor-khuwaja-cs/
