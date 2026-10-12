@@ -153,7 +153,6 @@ async function checkRoute(page, browserName, width, height, route, compactExpect
     if (columns.trim().split(/\s+/).length > 1) fail(id, `hero did not stack: ${columns}`);
   }
 
-  // Route-specific integrity checks.
   if (route.name === 'home') {
     const count = await page.locator('.project-card').count();
     if (count < 4) fail(id, `homepage project cards missing (${count})`);
@@ -233,14 +232,16 @@ for (const [browserName, factory] of Object.entries(engines)) {
   const browser = await factory.launch({ headless: true });
   try {
     for (const [width, height] of matrices[browserName]) {
-      const context = await browser.newContext({
+      const contextOptions = {
         viewport: { width, height },
         screen: { width, height },
         colorScheme: 'dark',
         hasTouch: width <= 900,
-        isMobile: width <= 600,
         deviceScaleFactor: width <= 600 ? 2 : 1,
-      });
+      };
+      if (browserName !== 'firefox') contextOptions.isMobile = width <= 600;
+
+      const context = await browser.newContext(contextOptions);
       const page = await context.newPage();
       const compactExpected = width <= 899;
 
@@ -251,7 +252,6 @@ for (const [browserName, factory] of Object.entries(engines)) {
       if (compactExpected) await checkMobileMenu(page, browserName, width, height);
       if ((width === 390 || width === 1024) && browserName !== 'firefox') await checkReducedMotion(page, browserName, width, height);
 
-      // Key reference screenshots, both themes where useful.
       if (
         (browserName === 'webkit' && [390, 768, 1024].includes(width)) ||
         (browserName === 'chromium' && [320, 430, 820, 1024, 1440, 2560].includes(width))
@@ -265,8 +265,6 @@ for (const [browserName, factory] of Object.entries(engines)) {
       await context.close();
     }
 
-    // Reproduce the class of in-app browser bug where the layout viewport looks desktop-ish
-    // while the physical screen and pointer are clearly phone-sized.
     if (browserName === 'chromium' || browserName === 'webkit') {
       const context = await browser.newContext({
         viewport: { width: 980, height: 844 },
