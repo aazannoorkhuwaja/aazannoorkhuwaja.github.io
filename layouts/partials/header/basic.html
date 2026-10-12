@@ -1,0 +1,38 @@
+<div class="portfolio-nav">
+  <a href="{{ "" | relLangURL }}" class="portfolio-brand" aria-label="{{ .Site.Title }} home">
+    <span class="portfolio-brand-mark" aria-hidden="true"></span>
+    <span class="portfolio-brand-copy">
+      <strong>{{ .Site.Title | markdownify }}</strong>
+      <small>CS · Software Systems</small>
+    </span>
+  </a>
+
+  <div class="ms-auto flex items-center">
+    <nav class="portfolio-nav-desktop hidden md:flex" aria-label="Primary navigation">
+      {{ range .Site.Menus.main }}
+        <a
+          href="{{ .URL }}"
+          {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}target="_blank" rel="noopener noreferrer"{{ end }}
+          class="portfolio-nav-link{{ if eq .Name "Contact" }} portfolio-nav-cta{{ end }}">
+          {{ .Name | markdownify }}
+        </a>
+      {{ end }}
+
+      {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+        <button
+          id="appearance-switcher"
+          aria-label="Toggle color theme"
+          title="Toggle color theme"
+          type="button"
+          class="portfolio-theme-toggle bf-icon-color-hover">
+          <span class="flex items-center justify-center dark:hidden">{{ partial "icon.html" "moon" }}</span>
+          <span class="items-center justify-center hidden dark:flex">{{ partial "icon.html" "sun" }}</span>
+        </button>
+      {{ end }}
+    </nav>
+
+    <div class="flex md:hidden">
+      {{ partial "header/components/mobile-menu.html" . }}
+    </div>
+  </div>
+</div>
