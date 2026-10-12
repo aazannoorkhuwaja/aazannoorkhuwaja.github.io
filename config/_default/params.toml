@@ -11,7 +11,7 @@ enableCodeCopy = true
 mainSections = ["post"]
 
 [header]
-  layout = "fixed"
+  layout = "clean"
 
 [footer]
   showMenu = true
@@ -52,8 +52,8 @@ mainSections = ["post"]
 [author]
   name = "Aazan Noor Khuwaja"
   image = "img/avatar.png"
-  headline = "Computer Science @ FAST-NUCES · Software Systems, AI & Open Source"
-  bio = "I build practical systems — from transaction-safe pharmacy software and ML-based intrusion detection to cross-platform browser tooling."
+  headline = "Computer Science @ FAST-NUCES Karachi · 5th Semester"
+  bio = "I build practical software systems across databases, AI/ML, and developer tooling, and I document what I learn along the way."
 
 [sitemap]
   excludedKinds = ["taxonomy", "term"]
