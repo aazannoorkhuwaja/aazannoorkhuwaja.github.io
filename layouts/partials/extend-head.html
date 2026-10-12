@@ -101,7 +101,7 @@
       max(2rem, env(safe-area-inset-bottom))
       max(1.25rem, env(safe-area-inset-left));
     background: #080b10;
-    transition: opacity 160ms ease;
+    transition: none;
   }
   html:not(.dark) .mobile-menu-dialog { background: #f5f3ee; }
   .mobile-menu-toggle:checked ~ .mobile-menu-dialog {
@@ -256,6 +256,7 @@
       max(2rem, env(safe-area-inset-bottom))
       max(1.25rem, env(safe-area-inset-left)) !important;
     background: #080b10 !important;
+    transition: none !important;
   }
   html:not(.dark) #mobile-menu-toggle ~ div.mobile-menu-dialog { background: #f5f3ee !important; }
   label.mobile-menu-trigger[for="mobile-menu-toggle"],
@@ -271,9 +272,5 @@
     .portfolio-brand { max-width: calc(100vw - 4rem) !important; }
     .portfolio-hero h1 { max-width: 13ch; }
     .project-card { padding: 1rem; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .mobile-menu-dialog { transition: none; }
   }
 </style>
