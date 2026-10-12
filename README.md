@@ -1,6 +1,6 @@
 # Aazan Noor Khuwaja — Portfolio
 
-Personal engineering portfolio for **Aazan Noor Khuwaja**, Computer Science undergraduate at FAST-NUCES Peshawar.
+Personal engineering portfolio for **Aazan Noor Khuwaja**, a 5th-semester Computer Science undergraduate at **FAST-NUCES Karachi**.
 
 The site highlights selected work across software engineering, databases, AI/ML, and open-source tooling, with longer-form writing for technical project stories.
 
@@ -9,7 +9,8 @@ The site highlights selected work across software engineering, databases, AI/ML,
 - **Hugo** static site generator
 - **Blowfish** theme with project-level overrides
 - Custom homepage partial in `layouts/partials/home/custom.html`
-- Custom styles in `assets/css/custom.css`
+- Custom navigation in `layouts/partials/header/basic.html`
+- Consolidated custom styles in `assets/css/custom.css`
 - **GitHub Pages** deployment through GitHub Actions
 
 ## Local development
@@ -49,13 +50,14 @@ content/
 
 ## Portfolio customization
 
-The site intentionally keeps custom work outside the vendored Blowfish theme wherever possible:
+Custom work is kept outside the vendored Blowfish theme wherever possible:
 
-- `layouts/partials/home/custom.html` — portfolio homepage composition
-- `assets/css/custom.css` — visual system, responsive layout, interaction states
+- `layouts/partials/home/custom.html` — homepage composition
+- `layouts/partials/header/basic.html` — portfolio navigation
+- `assets/css/custom.css` — visual system, responsive layout, and interaction states
 - `config/_default/` — navigation, author identity, and theme behavior
 
-This makes future theme maintenance safer than modifying theme internals directly.
+The header intentionally uses normal document flow rather than Blowfish's fixed-header mode so page titles and article content never sit underneath the navigation.
 
 ## Deployment
 
@@ -65,13 +67,11 @@ The workflow builds the Hugo site first and deploys only the generated `public/`
 
 ## Portfolio goals
 
-The site is designed around a few principles:
-
 1. Projects and outcomes before generic skill claims.
 2. Clear contribution statements for team projects.
 3. Measurable evidence where a project supports it.
-4. Professional navigation with minimal distractions.
-5. Responsive, keyboard-accessible interactions with reduced-motion support.
+4. Simple, readable presentation without unnecessary visual effects.
+5. Responsive and keyboard-accessible interactions with reduced-motion support.
 
 ## Links
 
