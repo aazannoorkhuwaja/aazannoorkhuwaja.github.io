@@ -5,13 +5,13 @@ colorScheme = "ocean"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
 
-enableSearch = true
+enableSearch = false
 enableCodeCopy = true
 
 mainSections = ["post"]
 
 [header]
-  layout = "basic"
+  layout = "fixed"
 
 [footer]
   showMenu = true
