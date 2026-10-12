@@ -1,14 +1,14 @@
 +++
 title = "About"
 date = 2024-01-01
-description = "About Aazan Noor Khuwaja — Computer Science student at FAST-NUCES building software systems, AI projects, and open-source tools."
+description = "About Aazan Noor Khuwaja — 5th-semester Computer Science student at FAST-NUCES Karachi building software systems, AI projects, and open-source tools."
 showDate = false
 showAuthor = false
 showReadingTime = false
 showTableOfContents = false
 +++
 
-I’m **Aazan Noor Khuwaja**, a Computer Science undergraduate at **FAST-NUCES Peshawar**.
+I’m **Aazan Noor Khuwaja**, a **5th-semester Computer Science undergraduate at FAST-NUCES Karachi Campus**. I began my degree at FAST-NUCES Peshawar and later transferred to Karachi, so some of my earlier university activities are connected to the Peshawar campus.
 
 I’m most interested in the point where computer-science concepts become working systems: databases that need to preserve integrity, software that has to be usable by someone else, and AI models that should be evaluated instead of simply described.
 
@@ -32,15 +32,15 @@ My experience outside technical coursework has helped me build communication, co
     <h3>Alkhidmat Foundation Pakistan</h3>
     <p>Volunteer supporting humanitarian and disaster-relief work, including flood-relief preparation and distribution support with Alkhidmat Foundation (Women Wing), KPK.</p>
     <span class="proof-meta">Aug 2025 — Present · Disaster & Humanitarian Relief</span>
-    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/details/volunteering-experiences/" target="_blank" rel="noopener noreferrer">View volunteering on LinkedIn ↗</a>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/details/volunteering-experiences/" target="_blank" rel="noopener noreferrer">View volunteering on LinkedIn</a>
   </article>
 
   <article class="profile-proof-card">
     <span class="proof-kicker">Community & outreach</span>
-    <h3>FAST-NUCES communities</h3>
-    <p>Experience across TEDxFAST Peshawar marketing outreach, Microsoft Learn Student Ambassador activities, IEEE, and student technology communities.</p>
+    <h3>University communities</h3>
+    <p>Earlier at FAST Peshawar, I worked on TEDxFAST marketing outreach and also took part in Microsoft Learn Student Ambassador, IEEE, and student technology community activities.</p>
     <span class="proof-meta">Communication · Coordination · Community</span>
-    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">View professional profile ↗</a>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">View professional profile</a>
   </article>
 </div>
 
@@ -50,11 +50,11 @@ I use structured courses to strengthen fundamentals, but I treat project work as
 
 <div class="profile-proof-grid">
   <article class="profile-proof-card">
-    <span class="proof-kicker">Verified on LinkedIn</span>
+    <span class="proof-kicker">LinkedIn credential</span>
     <h3>Object-Oriented Data Structures in C++</h3>
     <p>University of Illinois Urbana-Champaign</p>
     <span class="proof-meta">Issued Dec 2025 · Credential ID 70LXT0YGWHN2</span>
-    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/details/certifications/" target="_blank" rel="noopener noreferrer">View credential on LinkedIn ↗</a>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/details/certifications/" target="_blank" rel="noopener noreferrer">View credential on LinkedIn</a>
   </article>
 
   <article class="profile-proof-card">
@@ -62,7 +62,7 @@ I use structured courses to strengthen fundamentals, but I treat project work as
     <h3>Google Cloud — Generative AI</h3>
     <p>Generative-AI learning completed through Google Cloud. I’m keeping this listed as learning history until I have a public credential URL to attach directly.</p>
     <span class="proof-meta">Google Cloud · Generative AI</span>
-    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">View LinkedIn profile ↗</a>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">View LinkedIn profile</a>
   </article>
 </div>
 
