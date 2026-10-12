@@ -243,6 +243,26 @@
   html[data-compact-ui="true"] .hero-actions { flex-wrap: wrap !important; }
   html[data-compact-ui="true"] .btn { min-width: 0 !important; }
 
+  /* Legacy selectors still exist in the bundled stylesheet. These equal-or-higher
+     specificity rules deliberately win so there is only one mobile menu behavior. */
+  #mobile-menu-toggle ~ div.mobile-menu-dialog {
+    padding:
+      max(1.25rem, env(safe-area-inset-top))
+      max(1.25rem, env(safe-area-inset-right))
+      max(2rem, env(safe-area-inset-bottom))
+      max(1.25rem, env(safe-area-inset-left)) !important;
+    background: #080b10 !important;
+  }
+  html:not(.dark) #mobile-menu-toggle ~ div.mobile-menu-dialog { background: #f5f3ee !important; }
+  label.mobile-menu-trigger[for="mobile-menu-toggle"],
+  label.mobile-menu-close[for="mobile-menu-toggle"],
+  #appearance-switcher-mobile {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
   @media (max-width: 480px) {
     .portfolio-brand { max-width: calc(100vw - 4rem) !important; }
     .portfolio-hero h1 { max-width: 13ch; }
