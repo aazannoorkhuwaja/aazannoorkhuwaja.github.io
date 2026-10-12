@@ -8,7 +8,7 @@
   </a>
 
   <div class="ms-auto flex items-center">
-    <nav class="portfolio-nav-desktop hidden md:flex" aria-label="Primary navigation">
+    <nav class="portfolio-nav-desktop" aria-label="Primary navigation">
       {{ range .Site.Menus.main }}
         {{ $isCurrent := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
         <a
@@ -33,7 +33,7 @@
       {{ end }}
     </nav>
 
-    <div class="flex md:hidden">
+    <div class="portfolio-nav-mobile">
       {{ partial "header/components/mobile-menu.html" . }}
     </div>
   </div>
