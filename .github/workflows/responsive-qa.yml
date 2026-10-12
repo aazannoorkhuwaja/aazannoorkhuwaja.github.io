@@ -1,0 +1,65 @@
+name: Responsive QA
+
+on:
+  push:
+    branches:
+      - responsive-qa-v2
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  responsive-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.159.1'
+          extended: true
+
+      - name: Build production-equivalent site
+        run: hugo --minify --baseURL 'http://127.0.0.1:4173/'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium firefox webkit
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --directory public >/tmp/portfolio-server.log 2>&1 &
+          echo $! > /tmp/portfolio-server.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/portfolio-server.log
+          exit 1
+
+      - name: Run responsive browser matrix
+        env:
+          BASE_URL: http://127.0.0.1:4173
+          QA_ARTIFACTS: qa-artifacts
+        run: node scripts/responsive-qa.mjs
+
+      - name: Upload QA report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-qa-artifacts
+          path: qa-artifacts
+          if-no-files-found: warn
+          retention-days: 7
