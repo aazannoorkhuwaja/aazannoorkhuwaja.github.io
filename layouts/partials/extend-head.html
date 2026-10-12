@@ -1,0 +1,88 @@
+<style id="portfolio-responsive-qa">
+  /* Own the header breakpoint instead of mixing custom CSS with Tailwind visibility utilities. */
+  .portfolio-nav-desktop { display: flex; }
+  .portfolio-nav-mobile { display: none; align-items: center; }
+
+  @media (max-width: 899px) {
+    .portfolio-nav-desktop { display: none !important; }
+    .portfolio-nav-mobile { display: flex !important; }
+
+    .portfolio-nav {
+      min-height: 64px;
+      gap: .75rem;
+    }
+
+    .portfolio-brand {
+      max-width: calc(100vw - 7.25rem);
+    }
+
+    .portfolio-brand-copy strong {
+      font-size: .94rem;
+    }
+
+    /* Inner pages should read like articles, not documentation pages. */
+    #single_header {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 1.15rem;
+    }
+
+    #single_header h1 {
+      max-width: 18ch;
+      font-size: clamp(2rem, 8.5vw, 2.55rem) !important;
+      line-height: 1.04 !important;
+      letter-spacing: -.035em !important;
+      text-wrap: balance;
+    }
+
+    #single_header > .mt-1.mb-6 {
+      margin-top: .55rem !important;
+      margin-bottom: 1.1rem !important;
+      font-size: .9rem !important;
+      line-height: 1.45;
+    }
+
+    main#main-content > article > section {
+      margin-top: .2rem !important;
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 3rem !important;
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .article-content h2,
+    .article-content h3 {
+      line-height: 1.18;
+      letter-spacing: -.02em;
+    }
+
+    .article-content h3 {
+      margin-top: 2.25rem;
+      font-size: 1.45rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #single_header h1 {
+      max-width: 16ch;
+      font-size: clamp(1.9rem, 9.2vw, 2.25rem) !important;
+    }
+
+    #single_header > .mt-1.mb-6 {
+      font-size: .86rem !important;
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: .98rem;
+    }
+  }
+</style>
