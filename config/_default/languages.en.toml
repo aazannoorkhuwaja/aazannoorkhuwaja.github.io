@@ -9,13 +9,13 @@ title = "Aazan Noor Khuwaja"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  description = "Computer Science student at FAST-NUCES building practical software systems across AI, databases, and developer tooling."
+  description = "Computer Science student at FAST-NUCES Karachi building practical software systems across AI, databases, and developer tooling."
 
 [params.author]
   name = "Aazan Noor Khuwaja"
   image = "img/avatar.png"
-  headline = "Computer Science @ FAST-NUCES · Software Systems, AI & Open Source"
-  bio = "I build practical systems — from transaction-safe pharmacy software and ML-based intrusion detection to cross-platform browser tooling."
+  headline = "Computer Science @ FAST-NUCES Karachi · 5th Semester"
+  bio = "I build practical software systems across databases, AI/ML, and developer tooling, and I document what I learn along the way."
   links = [
     { github = "https://github.com/aazannoorkhuwaja" },
     { linkedin = "https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" },
