@@ -18,7 +18,7 @@ mainSections = ["post"]
   showCopyright = true
   showThemeAttribution = false
   showAppearanceSwitcher = true
-  showScrollToTop = true
+  showScrollToTop = false
 
 [homepage]
   layout = "custom"
