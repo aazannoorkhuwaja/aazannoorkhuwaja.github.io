@@ -10,25 +10,21 @@ enableCodeCopy = true
 
 mainSections = ["post"]
 
-defaultBackgroundImage = "img/20.jpg"
-
 [header]
   layout = "basic"
 
 [footer]
   showMenu = true
   showCopyright = true
-  showThemeAttribution = true
+  showThemeAttribution = false
   showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
-  layout = "background"
-  showRecent = true
-  showRecentItems = 5
-  showMoreLink = true
-  showMoreLinkDest = "/post/"
-  cardView = false
+  layout = "custom"
+  showRecent = false
+  showRecentItems = 3
+  showMoreLink = false
 
 [article]
   showDate = true
@@ -56,8 +52,8 @@ defaultBackgroundImage = "img/20.jpg"
 [author]
   name = "Aazan Noor Khuwaja"
   image = "img/avatar.png"
-  headline = "Computer Science Student at NUCES"
-  bio = "Passionate about AI, Linux, and Software Development. Competitive programmer and open-source enthusiast."
+  headline = "Computer Science @ FAST-NUCES · Software Systems, AI & Open Source"
+  bio = "I build practical systems — from transaction-safe pharmacy software and ML-based intrusion detection to cross-platform browser tooling."
 
 [sitemap]
   excludedKinds = ["taxonomy", "term"]
