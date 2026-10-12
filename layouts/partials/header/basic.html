@@ -1,3 +1,4 @@
+{{ $currentPage := . }}
 <div class="portfolio-nav">
   <a href="{{ "" | relLangURL }}" class="portfolio-brand" aria-label="{{ .Site.Title }} home">
     <span class="portfolio-brand-copy">
@@ -9,10 +10,12 @@
   <div class="ms-auto flex items-center">
     <nav class="portfolio-nav-desktop hidden md:flex" aria-label="Primary navigation">
       {{ range .Site.Menus.main }}
+        {{ $isCurrent := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
         <a
           href="{{ .URL }}"
           {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}target="_blank" rel="noopener noreferrer"{{ end }}
-          class="portfolio-nav-link{{ if eq .Name "Contact" }} portfolio-nav-cta{{ end }}">
+          {{ if $isCurrent }}aria-current="page"{{ end }}
+          class="portfolio-nav-link{{ if eq .Name "Contact" }} portfolio-nav-cta{{ end }}{{ if $isCurrent }} is-active{{ end }}">
           {{ .Name | markdownify }}
         </a>
       {{ end }}
