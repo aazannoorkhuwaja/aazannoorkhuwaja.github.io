@@ -1,88 +1,255 @@
-<style id="portfolio-responsive-qa">
-  /* Own the header breakpoint instead of mixing custom CSS with Tailwind visibility utilities. */
-  .portfolio-nav-desktop { display: flex; }
+<script>
+  (function () {
+    const root = document.documentElement;
+    const coarseQuery = window.matchMedia('(pointer: coarse)');
+    const anyCoarseQuery = window.matchMedia('(any-pointer: coarse)');
+
+    function syncCompactUI() {
+      const inner = window.innerWidth || 1024;
+      const visual = window.visualViewport && window.visualViewport.width ? window.visualViewport.width : inner;
+      const screenWidth = window.screen && window.screen.width ? window.screen.width : inner;
+      const screenHeight = window.screen && window.screen.height ? window.screen.height : inner;
+      const shortSide = Math.min(screenWidth, screenHeight);
+      const effectiveWidth = Math.min(inner, visual, screenWidth || inner);
+      const coarse = coarseQuery.matches || anyCoarseQuery.matches;
+      const compact = effectiveWidth <= 899 || (coarse && shortSide <= 700);
+
+      root.dataset.compactUi = compact ? 'true' : 'false';
+      if (compact) {
+        const heroSize = Math.max(38, Math.min(52, effectiveWidth * 0.115));
+        root.style.setProperty('--compact-hero-size', heroSize + 'px');
+      } else {
+        root.style.removeProperty('--compact-hero-size');
+      }
+    }
+
+    syncCompactUI();
+    window.addEventListener('resize', syncCompactUI, { passive: true });
+    window.addEventListener('orientationchange', syncCompactUI, { passive: true });
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', syncCompactUI, { passive: true });
+  })();
+</script>
+
+<style id="portfolio-responsive-system">
+  /* Header: one source of truth, independent of Blowfish/Tailwind breakpoints. */
+  .portfolio-nav-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    flex-shrink: 0;
+  }
+
+  .portfolio-nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: clamp(.9rem, 1.8vw, 1.45rem);
+  }
+
   .portfolio-nav-mobile { display: none; align-items: center; }
+
+  .theme-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .theme-icon-sun { display: none; }
+  html.dark .theme-icon-moon { display: none; }
+  html.dark .theme-icon-sun { display: inline-flex; }
+
+  /* Custom mobile menu: no responsive utility dependency. */
+  .mobile-menu-shell { display: flex; align-items: center; }
+  .mobile-menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .mobile-menu-trigger,
+  .mobile-menu-close,
+  #appearance-switcher-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .mobile-menu-trigger svg,
+  .mobile-menu-close svg,
+  #appearance-switcher-mobile svg { width: 1.25rem; height: 1.25rem; }
+
+  .mobile-menu-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding:
+      max(1.25rem, env(safe-area-inset-top))
+      max(1.25rem, env(safe-area-inset-right))
+      max(2rem, env(safe-area-inset-bottom))
+      max(1.25rem, env(safe-area-inset-left));
+    background: #080b10;
+    transition: opacity 160ms ease;
+  }
+  html:not(.dark) .mobile-menu-dialog { background: #f5f3ee; }
+  .mobile-menu-toggle:checked ~ .mobile-menu-dialog {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  body:has(#mobile-menu-toggle:checked) { overflow: hidden; }
+
+  .mobile-menu-panel {
+    width: min(100%, 32rem);
+    margin: 0 auto;
+  }
+  .mobile-menu-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(2.5rem, 10vh, 5rem);
+  }
+  .mobile-menu-brand {
+    min-width: 0;
+    color: inherit !important;
+    font-size: 1rem;
+    font-weight: 750;
+    text-decoration: none !important;
+    overflow-wrap: anywhere;
+  }
+  .mobile-menu-close {
+    border: 1px solid rgba(148, 163, 184, .35);
+    border-radius: 999px;
+  }
+  .mobile-menu-links { display: grid; gap: .35rem; }
+  .mobile-menu-links a {
+    display: block;
+    padding: .55rem 0;
+    color: #e9eef5 !important;
+    font-size: clamp(1.8rem, 9vw, 2.65rem);
+    font-weight: 760;
+    line-height: 1.1;
+    letter-spacing: -.035em;
+    text-decoration: none !important;
+  }
+  html:not(.dark) .mobile-menu-links a { color: #17202d !important; }
+  .mobile-menu-appearance {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(148, 163, 184, .28);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #98a5b6;
+    font-size: .9rem;
+  }
+  html:not(.dark) .mobile-menu-appearance { color: #667085; }
 
   @media (max-width: 899px) {
     .portfolio-nav-desktop { display: none !important; }
     .portfolio-nav-mobile { display: flex !important; }
-
-    .portfolio-nav {
-      min-height: 64px;
-      gap: .75rem;
-    }
-
-    .portfolio-brand {
-      max-width: calc(100vw - 7.25rem);
-    }
-
-    .portfolio-brand-copy strong {
-      font-size: .94rem;
-    }
-
-    /* Inner pages should read like articles, not documentation pages. */
-    #single_header {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 1.15rem;
-    }
-
-    #single_header h1 {
-      max-width: 18ch;
-      font-size: clamp(2rem, 8.5vw, 2.55rem) !important;
-      line-height: 1.04 !important;
-      letter-spacing: -.035em !important;
-      text-wrap: balance;
-    }
-
-    #single_header > .mt-1.mb-6 {
-      margin-top: .55rem !important;
-      margin-bottom: 1.1rem !important;
-      font-size: .9rem !important;
-      line-height: 1.45;
-    }
-
-    main#main-content > article > section {
-      margin-top: .2rem !important;
-    }
-
-    .article-content {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 3rem !important;
-    }
-
-    .article-content p,
-    .article-content li {
-      font-size: 1rem;
-      line-height: 1.72;
-    }
-
-    .article-content h2,
-    .article-content h3 {
-      line-height: 1.18;
-      letter-spacing: -.02em;
-    }
-
-    .article-content h3 {
-      margin-top: 2.25rem;
-      font-size: 1.45rem;
-    }
   }
 
+  /* Touch-device fallback for in-app browsers that report a desktop-ish layout viewport. */
+  html[data-compact-ui="true"] .portfolio-nav-desktop { display: none !important; }
+  html[data-compact-ui="true"] .portfolio-nav-mobile { display: flex !important; }
+  html[data-compact-ui="true"] .portfolio-nav {
+    min-height: 64px !important;
+    gap: .75rem !important;
+    padding-inline: 0 !important;
+    margin-inline: 0 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  html[data-compact-ui="true"] .portfolio-brand {
+    max-width: calc(100% - 4rem) !important;
+    min-width: 0 !important;
+  }
+  html[data-compact-ui="true"] .portfolio-brand-copy strong {
+    font-size: .94rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  html[data-compact-ui="true"] .portfolio-brand-copy small { display: none !important; }
+
+  /* Compact layout fallback: protects the homepage even when width media queries are unreliable. */
+  html[data-compact-ui="true"] .portfolio-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    padding: 2.5rem 0 3.5rem !important;
+  }
+  html[data-compact-ui="true"] .portfolio-hero h1 {
+    max-width: 14ch !important;
+    font-size: var(--compact-hero-size, 2.8rem) !important;
+    line-height: .98 !important;
+    letter-spacing: -.045em !important;
+  }
+  html[data-compact-ui="true"] .hero-lede {
+    margin-top: 1.3rem !important;
+    max-width: 42rem !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+  html[data-compact-ui="true"] .profile-card {
+    width: min(100%, 410px) !important;
+    justify-self: center !important;
+  }
+  html[data-compact-ui="true"] .proof-strip { grid-template-columns: minmax(0, 1fr) !important; }
+  html[data-compact-ui="true"] .proof-strip article,
+  html[data-compact-ui="true"] .proof-strip article:first-child,
+  html[data-compact-ui="true"] .proof-strip article:last-child {
+    padding: 1.05rem 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--p-dark-border) !important;
+  }
+  html:not(.dark)[data-compact-ui="true"] .proof-strip article { border-bottom-color: var(--p-border) !important; }
+  html[data-compact-ui="true"] .proof-strip article:last-child { border-bottom: 0 !important; }
+  html[data-compact-ui="true"] .portfolio-section { padding: 4rem 0 !important; }
+  html[data-compact-ui="true"] .section-heading {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: .8rem !important;
+  }
+  html[data-compact-ui="true"] .project-grid { display: block !important; }
+  html[data-compact-ui="true"] .project-card {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+  html[data-compact-ui="true"] .project-card-featured,
+  html[data-compact-ui="true"] .project-card-wide,
+  html[data-compact-ui="true"] .project-visual,
+  html[data-compact-ui="true"] .fyp-evidence,
+  html[data-compact-ui="true"] .approach-grid,
+  html[data-compact-ui="true"] .toolkit-grid,
+  html[data-compact-ui="true"] .profile-proof-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  html[data-compact-ui="true"] .project-card-metric,
+  html[data-compact-ui="true"] .project-card-media { grid-column: auto !important; }
+  html[data-compact-ui="true"] .motion-demo,
+  html[data-compact-ui="true"] .visual-frame { min-width: 0 !important; max-width: 100% !important; }
+  html[data-compact-ui="true"] .hero-actions { flex-wrap: wrap !important; }
+  html[data-compact-ui="true"] .btn { min-width: 0 !important; }
+
   @media (max-width: 480px) {
-    #single_header h1 {
-      max-width: 16ch;
-      font-size: clamp(1.9rem, 9.2vw, 2.25rem) !important;
-    }
+    .portfolio-brand { max-width: calc(100vw - 4rem) !important; }
+    .portfolio-hero h1 { max-width: 13ch; }
+    .project-card { padding: 1rem; }
+  }
 
-    #single_header > .mt-1.mb-6 {
-      font-size: .86rem !important;
-    }
-
-    .article-content p,
-    .article-content li {
-      font-size: .98rem;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu-dialog { transition: none; }
   }
 </style>
