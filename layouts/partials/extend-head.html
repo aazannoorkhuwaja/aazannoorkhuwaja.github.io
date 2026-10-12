@@ -80,7 +80,7 @@
     max-width: none !important;
     overflow-y: auto;
     overscroll-behavior: contain;
-    background: #080b10;
+    background: #080b10 !important;
     color: #eef2f7;
     transition: opacity 160ms ease;
     padding:
@@ -91,7 +91,7 @@
   }
 
   html:not(.dark) .portfolio-mobile-panel {
-    background: #f5f3ee;
+    background: #f5f3ee !important;
     color: #17202d;
   }
 
@@ -179,6 +179,12 @@
     color: #667085;
   }
 
+  @media (max-width: 980px) {
+    .profile-card {
+      margin-inline: auto !important;
+    }
+  }
+
   @media (max-width: 899px) {
     .portfolio-nav-desktop {
       display: none !important;
@@ -238,7 +244,6 @@
 
     .profile-card {
       width: min(100%, 430px) !important;
-      margin-inline: auto !important;
     }
 
     /* Inner pages read as content, not desktop documentation squeezed into a phone. */
