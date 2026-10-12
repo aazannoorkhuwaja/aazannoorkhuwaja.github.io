@@ -28,7 +28,7 @@ mainSections = ["post"]
 
 [article]
   showDate = true
-  showAuthor = true
+  showAuthor = false
   showHero = false
   showBreadcrumbs = false
   showDraftLabel = true
@@ -36,9 +36,9 @@ mainSections = ["post"]
   showHeadingAnchors = true
   showPagination = true
   showReadingTime = true
-  showTableOfContents = true
+  showTableOfContents = false
   showTaxonomies = true
-  showWordCount = true
+  showWordCount = false
   showZenMode = false
 
 [list]
