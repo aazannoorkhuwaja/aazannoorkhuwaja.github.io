@@ -1,88 +1,349 @@
 <style id="portfolio-responsive-qa">
-  /* Own the header breakpoint instead of mixing custom CSS with Tailwind visibility utilities. */
-  .portfolio-nav-desktop { display: flex; }
-  .portfolio-nav-mobile { display: none; align-items: center; }
+  /* Header visibility is controlled here, not by theme/Tailwind breakpoint utilities. */
+  .portfolio-nav-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .portfolio-nav-desktop {
+    display: flex !important;
+    align-items: center;
+    gap: clamp(.85rem, 1.55vw, 1.35rem);
+  }
+
+  .portfolio-nav-mobile {
+    display: none !important;
+    align-items: center;
+  }
+
+  .portfolio-theme-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  html.dark .portfolio-theme-icon-moon,
+  html:not(.dark) .portfolio-theme-icon-sun {
+    display: none !important;
+  }
+
+  /* Fully custom mobile menu; no peer/md utility dependency. */
+  .portfolio-mobile-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .portfolio-mobile-toggle {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .portfolio-mobile-trigger,
+  .portfolio-mobile-close,
+  .portfolio-mobile-theme-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .portfolio-mobile-trigger svg,
+  .portfolio-mobile-close svg,
+  .portfolio-mobile-theme-toggle svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .portfolio-mobile-panel {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    color: #eef2f7;
+    transition: opacity 160ms ease;
+    padding:
+      max(1rem, env(safe-area-inset-top))
+      max(1.25rem, env(safe-area-inset-right))
+      max(1.5rem, env(safe-area-inset-bottom))
+      max(1.25rem, env(safe-area-inset-left));
+  }
+
+  #mobile-menu-toggle ~ div.portfolio-mobile-panel[role="dialog"] {
+    background: #080b10 !important;
+  }
+
+  html:not(.dark) #mobile-menu-toggle ~ div.portfolio-mobile-panel[role="dialog"] {
+    background: #f5f3ee !important;
+    color: #17202d;
+  }
+
+  #mobile-menu-toggle:checked ~ .portfolio-mobile-panel {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body:has(#mobile-menu-toggle:checked) {
+    overflow: hidden !important;
+  }
+
+  .portfolio-mobile-panel-inner {
+    width: min(100%, 34rem);
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-mobile-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 56px;
+    margin-bottom: clamp(2rem, 8vh, 4.5rem);
+  }
+
+  .portfolio-mobile-brand {
+    min-width: 0;
+    color: inherit !important;
+    font-size: 1rem;
+    font-weight: 760;
+    letter-spacing: -.02em;
+    text-decoration: none !important;
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio-mobile-close {
+    border: 1px solid #354151;
+    border-radius: .75rem;
+  }
+
+  html:not(.dark) .portfolio-mobile-close {
+    border-color: #cbd2da;
+  }
+
+  .portfolio-mobile-links {
+    display: grid;
+    gap: .25rem;
+  }
+
+  .portfolio-mobile-links a {
+    display: flex;
+    align-items: center;
+    min-height: 58px;
+    padding: .45rem 0;
+    border-bottom: 1px solid #202a37;
+    color: inherit !important;
+    font-size: clamp(1.6rem, 8vw, 2.25rem);
+    font-weight: 740;
+    line-height: 1.08;
+    letter-spacing: -.035em;
+    text-decoration: none !important;
+  }
+
+  html:not(.dark) .portfolio-mobile-links a {
+    border-bottom-color: #d9dde2;
+  }
+
+  .portfolio-mobile-appearance {
+    margin-top: auto;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #98a5b6;
+    font-size: .92rem;
+  }
+
+  html:not(.dark) .portfolio-mobile-appearance {
+    color: #667085;
+  }
+
+  @media (max-width: 980px) {
+    .profile-card {
+      margin-inline: auto !important;
+    }
+  }
 
   @media (max-width: 899px) {
-    .portfolio-nav-desktop { display: none !important; }
-    .portfolio-nav-mobile { display: flex !important; }
+    .portfolio-nav-desktop {
+      display: none !important;
+    }
+
+    .portfolio-nav-mobile {
+      display: flex !important;
+    }
 
     .portfolio-nav {
-      min-height: 64px;
-      gap: .75rem;
+      min-height: 64px !important;
+      padding-inline: 0 !important;
+      margin-inline: 0 !important;
+      gap: .75rem !important;
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      transform: none !important;
+      contain: none !important;
     }
 
     .portfolio-brand {
-      max-width: calc(100vw - 7.25rem);
+      max-width: calc(100vw - 5.75rem) !important;
+      flex: 1 1 auto !important;
     }
 
     .portfolio-brand-copy strong {
-      font-size: .94rem;
+      font-size: .95rem !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
     }
 
-    /* Inner pages should read like articles, not documentation pages. */
-    #single_header {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 1.15rem;
+    .portfolio-brand-copy small {
+      display: none !important;
     }
 
-    #single_header h1 {
-      max-width: 18ch;
-      font-size: clamp(2rem, 8.5vw, 2.55rem) !important;
+    /* Home hero must stay composed in mobile and in-app browsers. */
+    .portfolio-hero {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 2rem !important;
+      padding-top: clamp(2rem, 7vw, 3rem) !important;
+    }
+
+    .portfolio-hero h1 {
+      max-width: 12ch !important;
+      font-size: clamp(2.55rem, 10.5vw, 4rem) !important;
+      line-height: .98 !important;
+      letter-spacing: -.045em !important;
+      text-wrap: balance;
+    }
+
+    .hero-lede {
+      max-width: 42rem !important;
+      font-size: 1rem !important;
+      line-height: 1.62 !important;
+    }
+
+    .profile-card {
+      width: min(100%, 430px) !important;
+    }
+
+    /* Inner pages read as content, not desktop documentation squeezed into a phone. */
+    main#main-content > article {
+      width: 100% !important;
+      max-width: 50rem !important;
+      margin-inline: auto !important;
+    }
+
+    main#main-content > article > header h1,
+    main#main-content header h1 {
+      max-width: 18ch !important;
+      font-size: clamp(2rem, 9vw, 2.75rem) !important;
       line-height: 1.04 !important;
       letter-spacing: -.035em !important;
       text-wrap: balance;
     }
 
-    #single_header > .mt-1.mb-6 {
-      margin-top: .55rem !important;
-      margin-bottom: 1.1rem !important;
-      font-size: .9rem !important;
-      line-height: 1.45;
-    }
-
-    main#main-content > article > section {
-      margin-top: .2rem !important;
-    }
-
-    .article-content {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 3rem !important;
+    .article-content,
+    .prose {
+      width: 100% !important;
+      max-width: 100% !important;
     }
 
     .article-content p,
     .article-content li {
-      font-size: 1rem;
-      line-height: 1.72;
+      font-size: 1rem !important;
+      line-height: 1.7 !important;
     }
 
     .article-content h2,
     .article-content h3 {
-      line-height: 1.18;
-      letter-spacing: -.02em;
+      line-height: 1.16 !important;
+      letter-spacing: -.02em !important;
     }
 
-    .article-content h3 {
-      margin-top: 2.25rem;
-      font-size: 1.45rem;
+    .article-content pre,
+    .article-content table {
+      max-width: 100% !important;
+      overflow-x: auto !important;
     }
   }
 
   @media (max-width: 480px) {
-    #single_header h1 {
-      max-width: 16ch;
-      font-size: clamp(1.9rem, 9.2vw, 2.25rem) !important;
+    body {
+      padding-inline: max(.9rem, env(safe-area-inset-left)) !important;
+      padding-right: max(.9rem, env(safe-area-inset-right)) !important;
     }
 
-    #single_header > .mt-1.mb-6 {
-      font-size: .86rem !important;
+    .portfolio-hero h1 {
+      max-width: 11.5ch !important;
+      font-size: clamp(2.35rem, 10.8vw, 3.15rem) !important;
     }
 
-    .article-content p,
-    .article-content li {
-      font-size: .98rem;
+    .hero-actions {
+      grid-template-columns: 1fr !important;
+    }
+
+    .hero-actions .btn,
+    .hero-actions .btn-primary {
+      grid-column: auto !important;
+      width: 100% !important;
+    }
+
+    .portfolio-mobile-links a {
+      min-height: 54px;
+      font-size: clamp(1.5rem, 8.5vw, 1.95rem);
+    }
+  }
+
+  @media (max-width: 360px) {
+    .portfolio-brand-copy strong {
+      font-size: .88rem !important;
+    }
+
+    .portfolio-hero h1 {
+      font-size: clamp(2.15rem, 10.6vw, 2.6rem) !important;
+    }
+  }
+
+  @media (min-width: 900px) and (max-width: 1100px) {
+    .portfolio-nav-desktop {
+      gap: .8rem;
+    }
+
+    .portfolio-nav-link {
+      font-size: .8rem !important;
+    }
+
+    .portfolio-nav-cta {
+      padding-inline: .7rem !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-mobile-panel {
+      transition: none !important;
     }
   }
 </style>

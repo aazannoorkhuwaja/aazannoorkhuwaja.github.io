@@ -1,59 +1,37 @@
-<div class="flex items-center h-14">
-  <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+<div class="portfolio-mobile-menu">
+  <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="portfolio-mobile-toggle">
 
-  <label
-    for="mobile-menu-toggle"
-    aria-label="Open navigation menu"
-    style="width:2.75rem;height:2.75rem;min-width:2.75rem;min-height:2.75rem;"
-    class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+  <label for="mobile-menu-toggle" class="portfolio-mobile-trigger" aria-label="Open navigation menu">
     {{ partial "icon.html" "bars" }}
   </label>
 
-  <div
-    role="dialog"
-    aria-modal="true"
-    aria-label="Site navigation"
-    style="scrollbar-gutter: stable;"
-    class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-opacity duration-200 peer-checked:visible peer-checked:opacity-100 bg-neutral-50 dark:bg-neutral-900 {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
-
-    <div class="mx-auto max-w-md">
-      <div class="flex items-center justify-between mb-10">
-        <a href="{{ "" | relLangURL }}" class="font-bold text-neutral-900 dark:text-neutral-100 no-underline" aria-label="{{ .Site.Title }} home">
+  <div class="portfolio-mobile-panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div class="portfolio-mobile-panel-inner">
+      <div class="portfolio-mobile-panel-head">
+        <a href="{{ "" | relLangURL }}" class="portfolio-mobile-brand" aria-label="{{ .Site.Title }} home">
           {{ .Site.Title | markdownify }}
         </a>
-
-        <label
-          for="mobile-menu-toggle"
-          aria-label="Close navigation menu"
-          style="width:3rem;height:3rem;min-width:3rem;min-height:3rem;"
-          class="flex items-center justify-center cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <label for="mobile-menu-toggle" class="portfolio-mobile-close" aria-label="Close navigation menu">
           {{ partial "icon.html" "xmark" }}
         </label>
       </div>
 
-      <nav class="space-y-6" aria-label="Mobile navigation">
+      <nav class="portfolio-mobile-links" aria-label="Mobile navigation">
         {{ range .Site.Menus.main }}
           <a
             href="{{ .URL }}"
-            {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}target="_blank" rel="noopener noreferrer"{{ end }}
-            class="flex items-center py-2 text-2xl font-bold tracking-tight text-neutral-700 dark:text-neutral-200 no-underline bf-icon-color-hover">
+            {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }}target="_blank" rel="noopener noreferrer"{{ end }}>
             {{ .Name | markdownify }}
           </a>
         {{ end }}
       </nav>
 
       {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-        <div class="mt-10 pt-8 border-t bf-border-color flex items-center justify-between gap-4">
-          <span class="text-base font-medium text-neutral-600 dark:text-neutral-300">Appearance</span>
-          <button
-            id="appearance-switcher-mobile"
-            type="button"
-            aria-label="Toggle color theme"
-            title="Toggle color theme"
-            style="width:2.75rem;height:2.75rem;min-width:2.75rem;min-height:2.75rem;"
-            class="flex items-center justify-center text-neutral-700 dark:text-neutral-200 bf-icon-color-hover">
-            <span class="dark:hidden">{{ partial "icon.html" "moon" }}</span>
-            <span class="hidden dark:inline-flex">{{ partial "icon.html" "sun" }}</span>
+        <div class="portfolio-mobile-appearance">
+          <span>Appearance</span>
+          <button id="appearance-switcher-mobile" type="button" aria-label="Toggle color theme" title="Toggle color theme" class="portfolio-mobile-theme-toggle">
+            <span class="portfolio-theme-icon portfolio-theme-icon-moon">{{ partial "icon.html" "moon" }}</span>
+            <span class="portfolio-theme-icon portfolio-theme-icon-sun">{{ partial "icon.html" "sun" }}</span>
           </button>
         </div>
       {{ end }}
