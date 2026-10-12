@@ -26,16 +26,45 @@ That mindset has shaped the projects I’m proudest of so far. I’ve worked on 
 
 My experience outside technical coursework has helped me build communication, coordination, and responsibility alongside engineering skills.
 
-- **Alkhidmat Foundation Pakistan — Volunteer:** participated in humanitarian and disaster-relief activities.
-- **TEDxFAST Peshawar — Marketing outreach:** worked across teams and communicated with people outside purely technical roles.
-- **Microsoft Learn Student Ambassador community & IEEE:** participated in student technology communities and collaborative learning activities.
+<div class="profile-proof-grid">
+  <article class="profile-proof-card">
+    <span class="proof-kicker">Volunteer experience</span>
+    <h3>Alkhidmat Foundation Pakistan</h3>
+    <p>Volunteer supporting humanitarian and disaster-relief work, including flood-relief preparation and distribution support with Alkhidmat Foundation (Women Wing), KPK.</p>
+    <span class="proof-meta">Aug 2025 — Present · Disaster & Humanitarian Relief</span>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/details/volunteering-experiences/" target="_blank" rel="noopener noreferrer">View volunteering on LinkedIn ↗</a>
+  </article>
+
+  <article class="profile-proof-card">
+    <span class="proof-kicker">Community & outreach</span>
+    <h3>FAST-NUCES communities</h3>
+    <p>Experience across TEDxFAST Peshawar marketing outreach, Microsoft Learn Student Ambassador activities, IEEE, and student technology communities.</p>
+    <span class="proof-meta">Communication · Coordination · Community</span>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">View professional profile ↗</a>
+  </article>
+</div>
 
 ## Certifications & learning credentials
 
-I use certifications as structured learning rather than as substitutes for project work. Two credentials that support the foundations shown in this portfolio are:
+I use structured courses to strengthen fundamentals, but I treat project work as the real test of whether I understood the material.
 
-- **University of Illinois Urbana-Champaign — Object-Oriented Programming & Data Structures**
-- **Google Cloud — Generative AI**
+<div class="profile-proof-grid">
+  <article class="profile-proof-card">
+    <span class="proof-kicker">Verified on LinkedIn</span>
+    <h3>Object-Oriented Data Structures in C++</h3>
+    <p>University of Illinois Urbana-Champaign</p>
+    <span class="proof-meta">Issued Dec 2025 · Credential ID 70LXT0YGWHN2</span>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/details/certifications/" target="_blank" rel="noopener noreferrer">View credential on LinkedIn ↗</a>
+  </article>
+
+  <article class="profile-proof-card">
+    <span class="proof-kicker">Structured learning</span>
+    <h3>Google Cloud — Generative AI</h3>
+    <p>Generative-AI learning completed through Google Cloud. I’m keeping this listed as learning history until I have a public credential URL to attach directly.</p>
+    <span class="proof-meta">Google Cloud · Generative AI</span>
+    <a class="proof-link" href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">View LinkedIn profile ↗</a>
+  </article>
+</div>
 
 The projects on this site are where I try to apply that learning: designing systems, debugging them, measuring results, and documenting what actually worked.
 
