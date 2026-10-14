@@ -7,8 +7,8 @@ showAuthor = false
 showTableOfContents = false
 showWordCount = false
 tags = ["Algorithms", "Adaptive A*", "AI"]
-featureimage = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a51al85punb02etuop8m.gif"
-featureimagealt = "Cover artwork for an article about Adaptive A-star routing"
+featureimage = "/img/writing/adaptive-a-star-banner.webp"
+featureimagealt = "Editorial map comparing a hazardous short route with a safer adaptive route"
 articletype = "Research notes"
 sourceurl = "https://dev.to/aazan_noor_khuwaja/why-is-the-shortest-route-sometimes-the-worst-my-take-on-adaptive-a-algorithm-4c8b"
 +++
