@@ -1,0 +1,18 @@
+<footer class="portfolio-footer print:hidden">
+  <div class="portfolio-footer-main">
+    <a class="portfolio-footer-brand" href="{{ "" | relLangURL }}" aria-label="{{ .Site.Title }} home">
+      {{ partial "brand/mark.html" (dict "class" "portfolio-footer-mark") }}
+      <span class="portfolio-footer-copy">
+        <strong>Aazan Noor Khuwaja</strong>
+        <span>Computer Science · FAST-NUCES Karachi</span>
+      </span>
+    </a>
+
+    <nav class="portfolio-footer-links" aria-label="Footer links">
+      <a href="https://github.com/aazannoorkhuwaja" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/aazan-noor-khuwaja-cs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:aazannoorkhuwaja@gmail.com">Email</a>
+    </nav>
+  </div>
+  <p class="portfolio-footer-meta">© {{ now.Format "2006" }} Aazan Noor Khuwaja. Built as a record of projects, learning, and technical writing.</p>
+</footer>
