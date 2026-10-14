@@ -8,12 +8,5 @@
       loading="{{ if $compact }}lazy{{ else }}eager{{ end }}"
       decoding="async"
       {{ if not $compact }}fetchpriority="high"{{ end }}>
-    <div class="article-banner-brand" aria-hidden="true">
-      <div class="article-banner-identity">
-        <span class="portfolio-monogram">ANK</span>
-        <span>Aazan Noor Khuwaja</span>
-      </div>
-      <span class="article-banner-topic">{{ $page.Params.articletype | default "Technical writing" }}</span>
-    </div>
   </figure>
 {{ end }}
