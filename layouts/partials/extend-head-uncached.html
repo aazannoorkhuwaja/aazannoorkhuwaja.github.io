@@ -1,2 +1,13 @@
-<link rel="stylesheet" href="{{ "css/portfolio-polish.css?v=20261015" | relURL }}">
-<link rel="stylesheet" href="{{ "css/portfolio-final.css?v=20261015" | relURL }}">
+<link rel="stylesheet" href="{{ "css/portfolio-polish.css?v=20261015-final" | relURL }}">
+<link rel="stylesheet" href="{{ "css/portfolio-final.css?v=20261015-final" | relURL }}">
+<style id="portfolio-final-card-fit">
+  /* Editorial covers are authored at 1400×588. Keep that ratio so card artwork is never cropped. */
+  .writing-card .article-banner,
+  .writing-card--uniform .article-banner {
+    aspect-ratio: 50 / 21 !important;
+  }
+  .writing-card .article-banner img,
+  .writing-card--uniform .article-banner img {
+    object-fit: contain !important;
+  }
+</style>
