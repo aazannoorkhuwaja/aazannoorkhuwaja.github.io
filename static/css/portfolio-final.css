@@ -1,0 +1,353 @@
+/* Final identity + theme layer. Intentionally restrained: editorial, not template-like. */
+
+/* ---------- ANK identity ---------- */
+.ank-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.ank-mark-ink { fill: #edf3f7; }
+.ank-mark-accent { fill: #2dd4bf; }
+html:not(.dark) .ank-mark-ink { fill: #102a43; }
+html:not(.dark) .ank-mark-accent { fill: #0f8b8d; }
+
+.portfolio-monogram { display: none !important; }
+.portfolio-brand {
+  align-items: center;
+  gap: .78rem;
+}
+.portfolio-brand-mark {
+  width: 3.25rem;
+  flex: 0 0 3.25rem;
+}
+.portfolio-mobile-brand-mark {
+  width: 3.05rem;
+  flex: 0 0 3.05rem;
+}
+.portfolio-brand-copy strong {
+  font-weight: 720;
+  letter-spacing: -.024em;
+}
+
+/* ---------- Premium light appearance ---------- */
+html:not(.dark) {
+  --p-accent: #0f7880;
+  --p-accent-soft: rgba(15,120,128,.075);
+  --p-text: #152238;
+  --p-muted: #617083;
+  --p-border: #dde4eb;
+  --p-border-strong: #cbd5df;
+  --p-page: #f7f9fb;
+  --p-surface: #ffffff;
+  --p-soft: #f1f4f7;
+}
+html:not(.dark) body {
+  background: linear-gradient(180deg, #fbfcfd 0%, #f7f9fb 48%, #f5f7fa 100%) !important;
+  color: #26354a !important;
+}
+html:not(.dark) .portfolio-nav {
+  border-bottom: 1px solid #e2e8ee;
+  background: rgba(251,252,253,.96);
+  box-shadow: 0 1px 0 rgba(15,23,42,.025);
+}
+html:not(.dark) .portfolio-brand-copy strong,
+html:not(.dark) .portfolio-hero h1,
+html:not(.dark) .section-heading h2,
+html:not(.dark) .project-card h3,
+html:not(.dark) .profile-card strong,
+html:not(.dark) .writing-index h1,
+html:not(.dark) .article-title {
+  color: #122033 !important;
+}
+html:not(.dark) .portfolio-brand-copy small,
+html:not(.dark) .hero-lede,
+html:not(.dark) .hero-note,
+html:not(.dark) .section-intro,
+html:not(.dark) .project-role,
+html:not(.dark) .writing-index-intro,
+html:not(.dark) .article-description {
+  color: #617083 !important;
+}
+html:not(.dark) .portfolio-nav-link { color: #344256 !important; }
+html:not(.dark) .portfolio-nav-link:hover,
+html:not(.dark) .portfolio-nav-link:focus-visible,
+html:not(.dark) .portfolio-nav-link.is-active { color: #0f7880 !important; }
+html:not(.dark) .portfolio-nav-link:not(.portfolio-nav-cta)::after { background: #0f7880; }
+html:not(.dark) .portfolio-nav-cta,
+html:not(.dark) .portfolio-theme-toggle {
+  border-color: #d7e0e8;
+  background: #fff;
+  color: #213147 !important;
+  box-shadow: none;
+}
+html:not(.dark) .portfolio-nav-cta:hover,
+html:not(.dark) .portfolio-nav-cta.is-active {
+  border-color: #9fc7cb;
+  background: #f2f8f8;
+}
+html:not(.dark) .btn-primary {
+  border-color: #0f7880;
+  background: #0f7880;
+  box-shadow: 0 8px 18px rgba(15,120,128,.14);
+}
+html:not(.dark) .btn-primary:hover { background: #0b6870; border-color: #0b6870; }
+html:not(.dark) .btn-secondary {
+  border-color: #d7e0e8;
+  background: #fff;
+  color: #26354a !important;
+  box-shadow: none;
+}
+html:not(.dark) .profile-card,
+html:not(.dark) .project-card,
+html:not(.dark) .profile-proof-card {
+  border-color: #dfe6ed;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(15,23,42,.055);
+}
+html:not(.dark) .profile-card::before { display: none; }
+html:not(.dark) .tag-row span,
+html:not(.dark) .project-proof span,
+html:not(.dark) .article-tags span,
+html:not(.dark) .writing-card-tags span {
+  border-color: #dfe6ec;
+  background: #f4f7f9;
+  color: #0b737c;
+}
+html:not(.dark) .metric-board {
+  border-color: #e0e7ed;
+  background: #f5f8fa;
+}
+html:not(.dark) .visual-frame { border-color: #dfe6ec; background: #fff; }
+html:not(.dark) .portfolio-section,
+html:not(.dark) .proof-strip,
+html:not(.dark) .profile-facts,
+html:not(.dark) .profile-facts > div { border-color: #e1e7ed; }
+
+/* ---------- Writing archive ---------- */
+.writing-index {
+  max-width: 1240px;
+  padding-top: clamp(2.6rem, 6vw, 5.4rem);
+}
+.writing-hero {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: clamp(1.8rem, 4vw, 3rem);
+  border-bottom: 1px solid #273244;
+}
+html:not(.dark) .writing-hero { border-bottom-color: #dde4eb; }
+.writing-hero-copy { max-width: 760px; }
+.writing-index-kicker { color: #73ded3; }
+html:not(.dark) .writing-index-kicker { color: #0f7880; }
+.writing-index h1 { font-size: clamp(3.2rem, 7vw, 6.4rem); }
+.writing-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem 1rem;
+  margin-top: 1.2rem;
+  color: #8392a4;
+  font-size: .78rem;
+}
+html:not(.dark) .writing-hero-meta { color: #6d7a8c; }
+.writing-hero-mark {
+  width: clamp(7rem, 12vw, 10rem);
+  padding-bottom: .3rem;
+  opacity: .98;
+}
+
+.writing-grid--uniform {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+.writing-card--uniform {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #273244;
+  border-radius: 1rem;
+  background: #101720;
+  box-shadow: none;
+}
+html:not(.dark) .writing-card--uniform {
+  border-color: #dfe6ed;
+  background: #fff;
+  box-shadow: 0 9px 26px rgba(15,23,42,.045);
+}
+.writing-card-media {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #273244;
+  text-decoration: none !important;
+}
+html:not(.dark) .writing-card-media { border-bottom-color: #e2e8ee; }
+.writing-card .article-banner {
+  min-height: 0 !important;
+  aspect-ratio: 2 / 1;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.writing-card .article-banner img {
+  transition: transform 240ms ease;
+}
+.writing-card-body { padding: 1.15rem 1.2rem 1.25rem; }
+.writing-card-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: baseline;
+}
+.writing-card-meta--top {
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+  font-size: .7rem;
+}
+.writing-card h2 {
+  margin: .68rem 0 .6rem;
+  font-size: clamp(1.28rem, 1.7vw, 1.62rem);
+  line-height: 1.13;
+}
+.writing-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+.writing-card-tags { margin-top: .85rem; }
+.writing-card-read {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 1.1rem;
+  color: #73ded3 !important;
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+html:not(.dark) .writing-card-read { color: #0f7880 !important; }
+.writing-card-read::after { content: " →"; margin-left: .3rem; }
+
+/* Final generated covers already contain their own editorial composition. */
+.article-banner {
+  aspect-ratio: 2 / 1;
+  border-radius: 1rem;
+  border-color: #2a3748;
+  background: #0d1520;
+  box-shadow: 0 18px 44px rgba(0,0,0,.15);
+}
+.article-banner::after,
+.article-banner-brand { display: none !important; }
+html:not(.dark) .article-banner {
+  border-color: #dde5ec;
+  box-shadow: 0 14px 36px rgba(15,23,42,.065);
+}
+.article-banner--single { margin-bottom: 2.5rem; }
+
+/* ---------- Article reading ---------- */
+.article-shell--post { max-width: 54rem; }
+.article-title { max-width: 18ch; }
+.article-content { color: #c7d0da; }
+html:not(.dark) .article-content { color: #35445a; }
+html:not(.dark) .article-content p,
+html:not(.dark) .article-content li { color: #3f4e62; }
+html:not(.dark) .article-source-note {
+  border-color: #dfe6ed;
+  background: #f3f6f8;
+}
+
+/* ---------- Personal footer ---------- */
+.portfolio-footer {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.7rem 0 2.1rem;
+  border-top: 1px solid #273244;
+  color: #8997a8;
+}
+html:not(.dark) .portfolio-footer { border-top-color: #dde4eb; color: #657386; }
+.portfolio-footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.portfolio-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  min-width: 0;
+}
+.portfolio-footer-mark { width: 3rem; flex: 0 0 3rem; }
+.portfolio-footer-copy { display: grid; gap: .1rem; }
+.portfolio-footer-copy strong { color: #e9eef4; font-size: .9rem; }
+html:not(.dark) .portfolio-footer-copy strong { color: #1b2a3d; }
+.portfolio-footer-copy span { font-size: .72rem; }
+.portfolio-footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .9rem; }
+.portfolio-footer-links a {
+  color: inherit !important;
+  font-size: .76rem;
+  font-weight: 650;
+  text-decoration: none !important;
+}
+.portfolio-footer-links a:hover,
+.portfolio-footer-links a:focus-visible { color: #73ded3 !important; }
+html:not(.dark) .portfolio-footer-links a:hover,
+html:not(.dark) .portfolio-footer-links a:focus-visible { color: #0f7880 !important; }
+.portfolio-footer-meta {
+  margin-top: 1rem;
+  font-size: .66rem;
+}
+
+/* ---------- Interaction and responsive ---------- */
+:where(a,button,label[for="mobile-menu-toggle"]):focus-visible {
+  outline: 2px solid #2dd4bf !important;
+  outline-offset: 3px;
+}
+@media (hover:hover) and (pointer:fine) {
+  .writing-card--uniform:hover {
+    transform: translateY(-2px);
+    border-color: #3a4a5f;
+    box-shadow: 0 17px 38px rgba(0,0,0,.13);
+  }
+  .writing-card--uniform:hover .article-banner img { transform: scale(1.012); }
+  html:not(.dark) .writing-card--uniform:hover {
+    border-color: #bed0d8;
+    box-shadow: 0 17px 40px rgba(15,23,42,.075);
+  }
+}
+@media (max-width: 1080px) {
+  .writing-grid--uniform { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 899px) {
+  .portfolio-brand-mark { width: 2.8rem; flex-basis: 2.8rem; }
+  .writing-hero { grid-template-columns: 1fr auto; }
+  .writing-hero-mark { width: 6.5rem; }
+}
+@media (max-width: 700px) {
+  .writing-grid--uniform { grid-template-columns: 1fr; }
+  .writing-hero { grid-template-columns: 1fr; }
+  .writing-hero-mark { display: none; }
+  .writing-card-topline { align-items: flex-start; }
+  .article-banner { border-radius: .78rem; }
+  .portfolio-footer-main { align-items: flex-start; flex-direction: column; }
+  .portfolio-footer-links { justify-content: flex-start; }
+}
+@media (max-width: 430px) {
+  .portfolio-brand { gap: .55rem; }
+  .portfolio-brand-mark { width: 2.45rem; flex-basis: 2.45rem; }
+  .portfolio-mobile-brand-mark { width: 2.75rem; flex-basis: 2.75rem; }
+  .writing-card-body { padding: 1rem; }
+  .writing-card-topline { flex-direction: column; gap: .3rem; }
+  .article-banner--single { margin-bottom: 1.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .writing-card,
+  .writing-card .article-banner img { transition: none !important; transform: none !important; }
+}

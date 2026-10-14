@@ -1,0 +1,16 @@
+{
+  "name": "Aazan Noor Khuwaja",
+  "short_name": "ANK",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#0f1720",
+  "icons": [
+    {
+      "src": "/ank-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

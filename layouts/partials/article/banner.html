@@ -1,0 +1,12 @@
+{{ $page := .page }}
+{{ $compact := .compact | default false }}
+{{ with $page.Params.featureimage }}
+  <figure class="article-banner{{ if $compact }} article-banner--card{{ else }} article-banner--single{{ end }}">
+    <img
+      src="{{ . }}"
+      alt="{{ $page.Params.featureimagealt | default (printf "%s article banner" $page.Title) }}"
+      loading="{{ if $compact }}lazy{{ else }}eager{{ end }}"
+      decoding="async"
+      {{ if not $compact }}fetchpriority="high"{{ end }}>
+  </figure>
+{{ end }}

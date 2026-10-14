@@ -1,0 +1,57 @@
+{{ define "main" }}
+  <section class="writing-index writing-index--reference" aria-labelledby="writing-title">
+    <header class="writing-hero">
+      <div class="writing-hero-copy">
+        <p class="writing-index-kicker">Aazan Noor Khuwaja · Technical writing</p>
+        <h1 id="writing-title">Writing</h1>
+        <p class="writing-index-intro">Articles and notes from projects, coursework, and research across software engineering, algorithms, AI, and developer tooling.</p>
+        <div class="writing-hero-meta" aria-label="Writing overview">
+          <span>{{ len .Pages }} published pieces</span>
+          <span>Project retrospectives · Research notes</span>
+        </div>
+      </div>
+      <div class="writing-hero-mark" aria-hidden="true">
+        {{ partial "brand/mark.html" (dict "class" "writing-hero-brand-mark") }}
+      </div>
+    </header>
+
+    {{ if gt (len .Pages) 0 }}
+      <div class="writing-grid writing-grid--uniform">
+        {{ range $page := .Pages.ByDate.Reverse }}
+          <article class="writing-card writing-card--uniform">
+            <a class="writing-card-media" href="{{ $page.RelPermalink }}" aria-label="Read {{ $page.Title }}">
+              {{ partial "article/banner.html" (dict "page" $page "compact" true) }}
+            </a>
+
+            <div class="writing-card-body">
+              <div class="writing-card-topline">
+                <span class="writing-card-type">{{ $page.Params.articletype | default "Technical writing" }}</span>
+                <div class="writing-card-meta writing-card-meta--top">
+                  <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 Jan 2006" }}</time>
+                  <span aria-hidden="true">·</span>
+                  <span>{{ $page.ReadingTime }} min</span>
+                </div>
+              </div>
+
+              <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+
+              {{ with $page.Description }}
+                <p class="writing-card-summary">{{ . }}</p>
+              {{ end }}
+
+              {{ with $page.Params.tags }}
+                <div class="writing-card-tags" aria-label="Topics">
+                  {{ range first 4 . }}<span>{{ . }}</span>{{ end }}
+                </div>
+              {{ end }}
+
+              <a class="writing-card-read" href="{{ $page.RelPermalink }}">Read article</a>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p>No articles yet.</p>
+    {{ end }}
+  </section>
+{{ end }}

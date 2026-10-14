@@ -4,6 +4,7 @@
 colorScheme = "ocean"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
+hotlinkFeatureImage = true
 
 enableSearch = false
 enableCodeCopy = true
@@ -46,7 +47,7 @@ mainSections = ["post"]
   showBreadcrumbs = false
   showSummary = true
   showCards = true
-  groupByYear = true
+  groupByYear = false
   cardView = true
 
 [author]

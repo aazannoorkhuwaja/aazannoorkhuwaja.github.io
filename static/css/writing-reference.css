@@ -1,0 +1,252 @@
+/* Writing index inspired by the image-led Blowfish card structure on hissamshar.github.io/posts/. */
+.writing-index--reference {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4.75rem) 0 clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.writing-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2.2rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid #263244;
+  border-radius: 1.3rem;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(82, 220, 205, 0.13), transparent 18rem),
+    linear-gradient(145deg, #111821 0%, #0e151d 58%, #101b25 100%);
+  box-shadow: 0 24px 65px rgba(0,0,0,.16);
+}
+.writing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .24;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, #000, transparent 85%);
+}
+.writing-hero-copy,
+.writing-hero-mark { position: relative; z-index: 1; }
+.writing-hero h1 {
+  margin: 0;
+  color: #f8fafc !important;
+  font-size: clamp(3.2rem, 7vw, 6.3rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+  font-weight: 800;
+}
+.writing-hero .writing-index-kicker { color: #79e7da; }
+.writing-hero .writing-index-intro {
+  max-width: 44rem;
+  margin-top: 1.05rem;
+  color: #bcc8d5;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+}
+.writing-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem 1rem;
+  margin-top: 1.35rem;
+  color: #8797aa;
+  font-size: .77rem;
+}
+.writing-hero-mark .portfolio-monogram {
+  width: clamp(4.4rem, 8vw, 6.25rem);
+  height: clamp(4.4rem, 8vw, 6.25rem);
+  flex-basis: auto;
+  border-radius: 1.25rem;
+  border-color: rgba(255,255,255,.18);
+  background: rgba(7, 13, 20, .48);
+  color: #9df8ec;
+  font-size: clamp(.92rem, 1.7vw, 1.25rem);
+  box-shadow: 0 16px 35px rgba(0,0,0,.18);
+  backdrop-filter: blur(12px);
+}
+
+.writing-grid--uniform {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.writing-card--uniform {
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #293647;
+  border-radius: 1rem;
+  background: #101720;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.writing-card-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none !important;
+}
+.writing-card--uniform .article-banner {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.writing-card--uniform .article-banner img {
+  transition: transform 280ms ease;
+}
+.writing-card--uniform .article-banner-brand {
+  left: .75rem;
+  right: .75rem;
+  bottom: .65rem;
+}
+.writing-card--uniform .article-banner-topic { display: none; }
+.writing-card--uniform .article-banner-identity span:last-child { font-size: .68rem; }
+.writing-card--uniform .article-banner-identity .portfolio-monogram {
+  width: 1.7rem;
+  height: 1.7rem;
+  flex-basis: 1.7rem;
+  border-radius: .5rem;
+  font-size: .5rem;
+}
+.writing-card--uniform .writing-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.15rem 1.15rem 1.2rem;
+}
+.writing-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+.writing-card--uniform .writing-card-type {
+  color: #7ce5da;
+  font-size: .65rem;
+  font-weight: 760;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.writing-card-meta--top {
+  margin: 0;
+  padding: 0;
+  color: #7f8da0;
+  font-size: .68rem;
+  white-space: nowrap;
+}
+.writing-card--uniform h2 {
+  margin: .65rem 0 .55rem;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.12;
+  letter-spacing: -.03em;
+}
+.writing-card--uniform h2 a {
+  color: #edf3f8 !important;
+  text-decoration: none !important;
+}
+.writing-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #9ca9b8 !important;
+  font-size: .86rem !important;
+  line-height: 1.58 !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.writing-card--uniform .writing-card-tags {
+  margin-top: .9rem;
+}
+.writing-card--uniform .writing-card-tags span {
+  padding: .23rem .44rem;
+  font-size: .62rem;
+}
+.writing-card-read {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 1.1rem;
+  color: #80e9de !important;
+  font-size: .76rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+html:not(.dark) .writing-hero {
+  border-color: #dce4eb;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(18, 139, 151, .11), transparent 18rem),
+    linear-gradient(145deg, #ffffff 0%, #f3f8fa 58%, #edf4f7 100%);
+  box-shadow: 0 22px 54px rgba(22,34,52,.085);
+}
+html:not(.dark) .writing-hero::before {
+  background-image:
+    linear-gradient(rgba(15,23,42,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,.035) 1px, transparent 1px);
+}
+html:not(.dark) .writing-hero h1 { color: #101828 !important; }
+html:not(.dark) .writing-hero .writing-index-kicker { color: #0b7285; }
+html:not(.dark) .writing-hero .writing-index-intro { color: #5d687a; }
+html:not(.dark) .writing-hero-meta { color: #7a8596; }
+html:not(.dark) .writing-hero-mark .portfolio-monogram {
+  border-color: #c9dbe0;
+  background: #0b7285;
+  color: #ffffff;
+  box-shadow: 0 14px 32px rgba(11,114,133,.18);
+}
+html:not(.dark) .writing-card--uniform {
+  border-color: #dfe6ed;
+  background: #ffffff;
+  box-shadow: 0 9px 25px rgba(22,34,52,.055), 0 1px 2px rgba(22,34,52,.03);
+}
+html:not(.dark) .writing-card--uniform .writing-card-type { color: #0b7285; }
+html:not(.dark) .writing-card-meta--top { color: #7a8595; }
+html:not(.dark) .writing-card--uniform h2 a { color: #111827 !important; }
+html:not(.dark) .writing-card-summary { color: #5d687a !important; }
+html:not(.dark) .writing-card-read { color: #0b7285 !important; }
+
+@media (hover:hover) and (pointer:fine) {
+  .writing-card--uniform:hover {
+    transform: translateY(-3px);
+    border-color: #3e5067;
+    box-shadow: 0 20px 44px rgba(0,0,0,.15);
+  }
+  .writing-card--uniform:hover .article-banner img { transform: scale(1.025); }
+  html:not(.dark) .writing-card--uniform:hover {
+    border-color: #b9ced7;
+    box-shadow: 0 20px 48px rgba(22,34,52,.09);
+  }
+}
+
+@media (max-width: 980px) {
+  .writing-grid--uniform { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .writing-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.55rem;
+    border-radius: 1rem;
+  }
+  .writing-hero-mark { display: none; }
+  .writing-hero h1 { font-size: clamp(2.85rem, 15vw, 4.4rem); }
+  .writing-grid--uniform { grid-template-columns: 1fr; }
+  .writing-card-topline { align-items: flex-start; }
+}
+@media (max-width: 420px) {
+  .writing-hero { padding: 1.3rem; }
+  .writing-card-topline { display: block; }
+  .writing-card-meta--top { margin-top: .35rem; }
+  .writing-card--uniform .writing-card-body { padding: 1rem; }
+}
