@@ -7,8 +7,8 @@ showAuthor = false
 showTableOfContents = false
 showWordCount = false
 tags = ["Agentic AI", "AI", "Research Notes"]
-featureimage = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rvcgu574tz3xx50n4ch0.png"
-featureimagealt = "Cover artwork for an article about agentic AI"
+featureimage = "/img/writing/agentic-ai-banner.webp"
+featureimagealt = "Editorial diagram of an AI orchestrator coordinating planning, memory, tools, and actions"
 articletype = "Research notes"
 sourceurl = "https://dev.to/aazan_noor_khuwaja/what-happens-when-ai-stops-waiting-for-your-prompts-d91"
 +++
