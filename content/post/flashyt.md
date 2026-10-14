@@ -7,7 +7,7 @@ showAuthor = false
 showTableOfContents = false
 showWordCount = false
 tags = ["Browser Extensions", "Python", "Open Source"]
-featureimage = "/img/writing/flashyt-banner.webp"
+featureimage = "/img/writing/flashyt-banner.svg"
 featureimagealt = "FlashYT article cover showing a browser-integrated local download workflow"
 articletype = "Project retrospective"
 [params]
