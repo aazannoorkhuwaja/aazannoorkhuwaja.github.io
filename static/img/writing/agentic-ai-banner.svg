@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 588" role="img" aria-labelledby="title desc">
+  <title id="title">What Happens When AI Stops Waiting for Your Prompts?</title>
+  <desc id="desc">Editorial diagram of an AI orchestrator coordinating planning, memory, tools and actions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#081421"/><stop offset="1" stop-color="#0b2030"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+  </defs>
+  <rect width="1400" height="588" fill="url(#bg)"/>
+  <g opacity=".22" stroke="#5eead4" stroke-width="1"><path d="M720 48h600M720 106h600M720 164h600M720 222h600M720 280h600M720 338h600M720 396h600M720 454h600"/><path d="M760 28v520M840 28v520M920 28v520M1000 28v520M1080 28v520M1160 28v520M1240 28v520"/></g>
+  <g transform="translate(58 50)">
+    <g transform="scale(.72)"><path d="M3 49 25 7h10l22 42H44L30 21 16 49H3Zm20-13h14l-7-14-7 14Z" fill="#f8fafc"/><path d="M62 49V7h10v42H62Zm35 0V7h10v42H97Z" fill="#f8fafc"/><path d="M68 7h12l27 32v10H96L68 16V7Z" fill="#22d3ee"/><path d="M118 49V7h10v17l22-17h15l-28 21 29 21h-16l-22-17v17h-10Z" fill="#f8fafc"/><circle cx="160" cy="8" r="3.5" fill="#22d3ee"/></g>
+  </g>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="58" y="136" width="92" height="34" rx="17" fill="#0d2738" stroke="#2dd4bf" stroke-opacity=".6"/><text x="104" y="158" fill="#bff8ef" font-size="16" text-anchor="middle" font-weight="700">AI</text>
+    <rect x="162" y="136" width="166" height="34" rx="17" fill="#0d2738" stroke="#6b7f96" stroke-opacity=".55"/><text x="245" y="158" fill="#dce7f1" font-size="16" text-anchor="middle" font-weight="650">RESEARCH NOTES</text>
+    <text x="58" y="224" fill="#f8fafc" font-size="54" font-weight="760" letter-spacing="-1.8">What Happens When</text>
+    <text x="58" y="282" fill="#f8fafc" font-size="54" font-weight="760" letter-spacing="-1.8">AI Stops Waiting for</text>
+    <text x="58" y="340" fill="url(#accent)" font-size="54" font-weight="760" letter-spacing="-1.8">Your Prompts?</text>
+    <rect x="58" y="376" width="72" height="4" rx="2" fill="#2dd4bf"/>
+    <text x="58" y="422" fill="#9fb0c3" font-size="22">From reactive assistants to goal-directed agents.</text>
+    <text x="58" y="454" fill="#9fb0c3" font-size="22">Planning, memory, tools, evaluation and PEAS.</text>
+  </g>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" transform="translate(720 78)">
+    <g fill="#0d1f2e" stroke="#345269" stroke-width="1.4">
+      <rect x="0" y="0" width="170" height="88" rx="16"/><rect x="188" y="0" width="170" height="88" rx="16"/><rect x="376" y="0" width="170" height="88" rx="16"/>
+      <rect x="164" y="188" width="218" height="132" rx="22" stroke="#22d3ee" stroke-width="3"/>
+      <rect x="448" y="164" width="184" height="64" rx="14"/><rect x="448" y="240" width="184" height="64" rx="14"/><rect x="448" y="316" width="184" height="64" rx="14"/>
+      <rect x="0" y="208" width="132" height="94" rx="16"/>
+    </g>
+    <g fill="#d9e7f3" font-size="18" font-weight="700" text-anchor="middle"><text x="85" y="34">Planning</text><text x="273" y="34">Memory</text><text x="461" y="34">Tools &amp; Action</text></g>
+    <g fill="#8ea4b7" font-size="13" text-anchor="middle"><text x="85" y="58">break goals into tasks</text><text x="273" y="58">keep useful context</text><text x="461" y="58">call tools and act</text></g>
+    <g fill="none" stroke="#22d3ee" stroke-width="2"><path d="M85 88v64h188v36"/><path d="M273 88v100"/><path d="M461 88v64H273v36"/><path d="M132 255h32"/><path d="M382 222h66"/><path d="M382 254h66"/><path d="M382 286h66"/></g>
+    <g fill="#22d3ee"><circle cx="273" cy="188" r="5"/><circle cx="164" cy="255" r="5"/><circle cx="448" cy="222" r="5"/><circle cx="448" cy="254" r="5"/><circle cx="448" cy="286" r="5"/></g>
+    <g text-anchor="middle"><text x="273" y="244" fill="#f8fafc" font-size="22" font-weight="800">AI ORCHESTRATOR</text><text x="273" y="274" fill="#9fb0c3" font-size="13">plan · act · observe · revise</text></g>
+    <g fill="#d9e7f3" font-size="14" font-weight="700"><text x="466" y="190">Analyze</text><text x="466" y="266">Synthesize</text><text x="466" y="342">Deliver</text><text x="20" y="238">Goal</text></g>
+    <g fill="#8ea4b7" font-size="12"><text x="466" y="210">inspect sources</text><text x="466" y="286">connect findings</text><text x="466" y="362">share outcome</text><text x="20" y="262">objective</text><text x="20" y="278">and constraints</text></g>
+  </g>
+</svg>
