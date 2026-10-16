@@ -2,11 +2,21 @@
   {{ $isPost := eq .Section "post" }}
   {{ $tocRequested := and $isPost (eq .Params.showTableOfContents true) }}
   {{ $showToc := and $tocRequested (gt .WordCount 900) (in .TableOfContents "<ul") }}
+  {{ $category := "" }}
+  {{ if $isPost }}
+    {{ with .Params.categories }}
+      {{ if gt (len .) 0 }}{{ $category = index . 0 }}{{ end }}
+    {{ end }}
+  {{ end }}
 
   <article class="article-shell{{ if $isPost }} article-shell--post{{ else }} article-shell--page{{ end }}{{ if $showToc }} article-shell--toc{{ end }}">
     <header class="article-header">
       {{ if $isPost }}
-        <a class="article-eyebrow" href="{{ "/post/" | relLangURL }}">Writing</a>
+        {{ if $category }}
+          <a class="article-eyebrow" href="{{ printf "/categories/%s/" ($category | urlize) | relLangURL }}">{{ $category }}</a>
+        {{ else }}
+          <a class="article-eyebrow" href="{{ "/post/" | relLangURL }}">Writing</a>
+        {{ end }}
       {{ end }}
 
       <h1 class="article-title">{{ .Title }}</h1>
@@ -25,6 +35,16 @@
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer">DEV Community</a>
           {{ end }}
         </div>
+
+        {{ with .Params.series }}
+          {{ if gt (len .) 0 }}
+            {{ $series := index . 0 }}
+            <a class="article-series-link" href="{{ printf "/series/%s/" ($series | urlize) | relLangURL }}">
+              <span>Series</span>
+              <strong>{{ $series }}</strong>
+            </a>
+          {{ end }}
+        {{ end }}
 
         {{ with .Params.tags }}
           <div class="article-tags" aria-label="Article topics">

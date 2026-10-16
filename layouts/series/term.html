@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <section class="writing-index writing-category-page writing-series-page" aria-labelledby="series-title">
+    <header class="writing-category-hero">
+      <a class="writing-category-back" href="{{ "/categories/learning/" | relLangURL }}">Learning</a>
+      <p class="writing-index-kicker">Learning series</p>
+      <h1 id="series-title">{{ .Title }}</h1>
+      {{ if eq (.Data.Term | lower) "backend-engineering-journey" }}
+        <p class="writing-index-intro">Six months of learning backend engineering in public — documenting concepts, experiments, bugs, decisions, and the projects that connect them.</p>
+      {{ else }}
+        <p class="writing-index-intro">A connected series of learning notes and technical writing.</p>
+      {{ end }}
+      <div class="writing-hero-meta">
+        <span>{{ len .Pages }} {{ if eq (len .Pages) 1 }}entry{{ else }}entries{{ end }}</span>
+        <span>Learning in public</span>
+      </div>
+    </header>
+
+    <div class="series-progress-note">
+      <span class="series-progress-note__label">Current focus</span>
+      <strong>Backend engineering</strong>
+      <p>New entries will be added as the learning progresses. The goal is to document what I actually understand, test, break, and build — not to rewrite documentation.</p>
+    </div>
+
+    {{ if gt (len .Pages) 0 }}
+      <div class="writing-grid writing-grid--uniform">
+        {{ range $page := .Pages.ByDate.Reverse }}
+          {{ partial "writing/card.html" $page }}
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
+{{ end }}

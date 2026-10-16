@@ -6,6 +6,7 @@ weight = 1
 showAuthor = false
 showTableOfContents = false
 showWordCount = false
+categories = ["Research"]
 tags = ["Agentic AI", "AI", "Research Notes"]
 featureimage = "/img/writing/agentic-ai-banner.svg"
 featureimagealt = "Editorial diagram of an AI orchestrator coordinating planning, memory, tools, and actions"

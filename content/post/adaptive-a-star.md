@@ -6,6 +6,7 @@ weight = 2
 showAuthor = false
 showTableOfContents = false
 showWordCount = false
+categories = ["Research"]
 tags = ["Algorithms", "Adaptive A*", "AI"]
 featureimage = "/img/writing/adaptive-a-star-banner.svg"
 featureimagealt = "Editorial map comparing a hazardous short route with a safer adaptive route"

@@ -1,0 +1,39 @@
+{{ define "main" }}
+  {{ $term := .Data.Term | lower }}
+  {{ $description := "Writing grouped by direction." }}
+  {{ if eq $term "learning" }}
+    {{ $description = "What I’m actively learning, testing, and trying to understand — including my six-month Backend Engineering Journey." }}
+  {{ else if eq $term "projects" }}
+    {{ $description = "Engineering notes, retrospectives, architecture decisions, bugs, and lessons from software I actually build." }}
+  {{ else if eq $term "research" }}
+    {{ $description = "Research papers, algorithms, AI, and deeper computer-science ideas I’m exploring beyond implementation." }}
+  {{ end }}
+
+  <section class="writing-index writing-category-page" aria-labelledby="category-title">
+    <header class="writing-category-hero">
+      <a class="writing-category-back" href="{{ "/post/" | relLangURL }}">Writing</a>
+      <p class="writing-index-kicker">Aazan Noor Khuwaja · Writing direction</p>
+      <h1 id="category-title">{{ .Title }}</h1>
+      <p class="writing-index-intro">{{ $description }}</p>
+      <div class="writing-hero-meta">
+        <span>{{ len .Pages }} {{ if eq (len .Pages) 1 }}piece{{ else }}pieces{{ end }}</span>
+        {{ if eq $term "learning" }}<span>Currently focused on backend engineering</span>{{ end }}
+      </div>
+    </header>
+
+    {{ partial "writing/category-nav.html" (dict "site" .Site "active" $term) }}
+
+    {{ if gt (len .Pages) 0 }}
+      <div class="writing-grid writing-grid--uniform">
+        {{ range $page := .Pages.ByDate.Reverse }}
+          {{ partial "writing/card.html" $page }}
+        {{ end }}
+      </div>
+    {{ else }}
+      <div class="writing-empty-state">
+        <p>Nothing published here yet.</p>
+        <a href="{{ "/post/" | relLangURL }}">Back to all writing</a>
+      </div>
+    {{ end }}
+  </section>
+{{ end }}
