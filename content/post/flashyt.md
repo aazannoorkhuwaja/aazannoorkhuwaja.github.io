@@ -6,6 +6,7 @@ weight = 3
 showAuthor = false
 showTableOfContents = false
 showWordCount = false
+categories = ["Projects"]
 tags = ["Browser Extensions", "Python", "Open Source"]
 featureimage = "/img/writing/flashyt-banner.svg"
 featureimagealt = "FlashYT article cover showing a browser-integrated local download workflow"
