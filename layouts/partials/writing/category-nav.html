@@ -1,0 +1,28 @@
+{{- $site := .site -}}
+{{- $active := .active | default "all" -}}
+{{- $categories := slice
+  (dict "key" "learning" "label" "Learning" "description" "What I’m actively learning and testing, including my Backend Engineering Journey.")
+  (dict "key" "projects" "label" "Projects" "description" "Engineering notes, decisions, failures, and lessons from software I actually build.")
+  (dict "key" "research" "label" "Research" "description" "Papers, algorithms, AI, and deeper computer-science ideas I’m exploring.")
+-}}
+
+<nav class="writing-category-nav" aria-label="Writing categories">
+  <a class="writing-category-card{{ if eq $active "all" }} is-active{{ end }}" href="{{ "/post/" | relLangURL }}">
+    <span class="writing-category-card__top">
+      <strong>All writing</strong>
+      <span>{{ len (where $site.RegularPages "Section" "post") }}</span>
+    </span>
+    <small>Everything I publish across learning, projects, and research.</small>
+  </a>
+
+  {{ range $categories }}
+    {{ $term := index $site.Taxonomies.categories .key }}
+    <a class="writing-category-card{{ if eq $active .key }} is-active{{ end }}" href="{{ printf "/categories/%s/" .key | relLangURL }}">
+      <span class="writing-category-card__top">
+        <strong>{{ .label }}</strong>
+        <span>{{ len $term }}</span>
+      </span>
+      <small>{{ .description }}</small>
+    </a>
+  {{ end }}
+</nav>
