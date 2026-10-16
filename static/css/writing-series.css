@@ -1,0 +1,98 @@
+.article-series-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: .55rem;
+  margin-top: 1rem;
+  padding: .5rem .7rem;
+  border: 1px solid #2c394a;
+  border-radius: .7rem;
+  background: rgba(20, 29, 41, .58);
+  color: #dbe6ef !important;
+  text-decoration: none !important;
+}
+
+.article-series-link span {
+  color: #7f8ca0;
+  font-size: .62rem;
+  font-weight: 760;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.article-series-link strong {
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.series-progress-note {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .35rem 1rem;
+  margin: 0 0 clamp(2.4rem, 5vw, 4rem);
+  padding: 1.15rem 1.25rem;
+  border: 1px solid #293647;
+  border-radius: 1rem;
+  background: rgba(14, 22, 31, .72);
+}
+
+.series-progress-note__label {
+  grid-column: 1;
+  color: #74e0d5;
+  font-size: .68rem;
+  font-weight: 780;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.series-progress-note strong {
+  grid-column: 2;
+  color: #f8fafc;
+  font-size: .95rem;
+}
+
+.series-progress-note p {
+  grid-column: 1 / -1;
+  max-width: 60rem;
+  margin: .5rem 0 0;
+  color: #95a3b4;
+  line-height: 1.65;
+}
+
+html:not(.dark) .article-series-link {
+  border-color: #dfe6ed;
+  background: #f6f9fb;
+  color: #344054 !important;
+}
+
+html:not(.dark) .article-series-link span {
+  color: #758195;
+}
+
+html:not(.dark) .series-progress-note {
+  border-color: #dfe6ed;
+  background: #f8fbfc;
+}
+
+html:not(.dark) .series-progress-note__label {
+  color: #0b7285;
+}
+
+html:not(.dark) .series-progress-note strong {
+  color: #172033;
+}
+
+html:not(.dark) .series-progress-note p {
+  color: #667085;
+}
+
+@media (max-width: 560px) {
+  .series-progress-note {
+    grid-template-columns: 1fr;
+  }
+  .series-progress-note__label,
+  .series-progress-note strong,
+  .series-progress-note p {
+    grid-column: 1;
+  }
+}
